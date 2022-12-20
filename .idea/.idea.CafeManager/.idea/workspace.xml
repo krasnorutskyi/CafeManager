@@ -5,8 +5,7 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created all entities, including joining tables entities">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.sln" afterDir="false" />
     </list>
@@ -38,6 +37,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2IyBexSTJbP6kNbygtbU00C3vD0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -106,8 +106,16 @@
       <workItem from="1671144537806" duration="248000" />
       <workItem from="1671144942908" duration="53000" />
       <workItem from="1671203481977" duration="6060000" />
-      <workItem from="1671390424822" duration="3379000" />
+      <workItem from="1671390424822" duration="5156000" />
     </task>
+    <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
+      <created>1671490017002</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671490017002</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,5 +149,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Created all entities, including joining tables entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created all entities, including joining tables entities" />
   </component>
 </project>
