@@ -5,7 +5,7 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created Application layer, created interface of generic repository.">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Added paging">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" afterDir="false" />
@@ -107,7 +107,7 @@
       <workItem from="1671144537806" duration="248000" />
       <workItem from="1671144942908" duration="53000" />
       <workItem from="1671203481977" duration="6060000" />
-      <workItem from="1671390424822" duration="7456000" />
+      <workItem from="1671390424822" duration="10177000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671573471001</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added paging">
+      <created>1671655445165</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671655445165</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +166,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Created all entities, including joining tables entities" />
     <MESSAGE value="Created Application layer, created interface of generic repository." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Application layer, created interface of generic repository." />
+    <MESSAGE value="Added paging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added paging" />
   </component>
 </project>
