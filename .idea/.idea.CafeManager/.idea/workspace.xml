@@ -5,10 +5,12 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Added paging">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;azure&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver.localdb",
+      "azure",
+      "sqlserver"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/vitaliy/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/vitaliy/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CafeManager">
     <configuration name="CafeManager" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CafeManager/CafeManager.csproj" />
@@ -107,7 +114,9 @@
       <workItem from="1671144537806" duration="248000" />
       <workItem from="1671144942908" duration="53000" />
       <workItem from="1671203481977" duration="6060000" />
-      <workItem from="1671390424822" duration="10177000" />
+      <workItem from="1671390424822" duration="12055000" />
+      <workItem from="1671665563366" duration="44000" />
+      <workItem from="1671665646762" duration="3463000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -130,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671655445165</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created abstractions for entities services">
+      <created>1671662624099</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671662624099</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +183,7 @@
     <MESSAGE value="Created all entities, including joining tables entities" />
     <MESSAGE value="Created Application layer, created interface of generic repository." />
     <MESSAGE value="Added paging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added paging" />
+    <MESSAGE value="Created abstractions for entities services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created abstractions for entities services" />
   </component>
 </project>

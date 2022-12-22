@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManager.Core", "CafeMan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManager.Application", "CafeManager.Application\CafeManager.Application.csproj", "{5EF2C5E6-742E-47F3-A650-4ED8A2AA3B7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManager.Infrastructure", "CafeManager.Infrastructure\CafeManager.Infrastructure.csproj", "{181BEE7D-C17B-4DF8-A810-4A5C1834E29E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{5EF2C5E6-742E-47F3-A650-4ED8A2AA3B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EF2C5E6-742E-47F3-A650-4ED8A2AA3B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EF2C5E6-742E-47F3-A650-4ED8A2AA3B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181BEE7D-C17B-4DF8-A810-4A5C1834E29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181BEE7D-C17B-4DF8-A810-4A5C1834E29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181BEE7D-C17B-4DF8-A810-4A5C1834E29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181BEE7D-C17B-4DF8-A810-4A5C1834E29E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
