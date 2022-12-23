@@ -13,10 +13,7 @@ public class ApplicationContext : DbContext
     {
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-    }
+    
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Dish> Dishes { get; set; }

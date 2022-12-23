@@ -5,12 +5,11 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created and filled Application context file">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/EF/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/EF/ApplicationContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1671203481977" duration="6060000" />
       <workItem from="1671390424822" duration="12055000" />
       <workItem from="1671665563366" duration="44000" />
-      <workItem from="1671665646762" duration="3463000" />
+      <workItem from="1671665646762" duration="6680000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -146,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671662624099</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Created and filled Application context file">
+      <created>1671740476900</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671740476901</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +190,7 @@
     <MESSAGE value="Created Application layer, created interface of generic repository." />
     <MESSAGE value="Added paging" />
     <MESSAGE value="Created abstractions for entities services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created abstractions for entities services" />
+    <MESSAGE value="Created and filled Application context file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created and filled Application context file" />
   </component>
 </project>

@@ -12,11 +12,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CafeManager.Application\CafeManager.Application.csproj" />
       <ProjectReference Include="..\CafeManager.Core\CafeManager.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="FluentAPI" />
+      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>
