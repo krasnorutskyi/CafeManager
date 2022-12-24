@@ -10,7 +10,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        var connectionString = @"Server=127.0.0.1,1401;Database=Cafe;User Id=SA;Password=12345678;TrustServerCertificate=true;";
+        var connectionString = @"Server=localhost,1433;Database=Cafe;User Id=SA;Password=12345678;TrustServerCertificate=true;";
         services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
         
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
