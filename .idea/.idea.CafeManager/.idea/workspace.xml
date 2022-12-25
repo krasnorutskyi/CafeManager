@@ -5,13 +5,11 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="implemented Dependency Injection">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Configured Entities for joining tables with FluentAPI">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Waiter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Waiter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/EF/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/EF/ApplicationContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/EF/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/EF/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/EF/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ea828ecade990e734efaeed875732552144166cbef844dfca077e91b3e6e/ModelValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce719136c12653cd464ae0b247771f618b92f8beec14c1010b5278a7d0fd1f/DbContextServices.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -61,7 +60,7 @@
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -123,7 +122,7 @@
       <workItem from="1671203481977" duration="6060000" />
       <workItem from="1671390424822" duration="12055000" />
       <workItem from="1671665563366" duration="44000" />
-      <workItem from="1671665646762" duration="12439000" />
+      <workItem from="1671665646762" duration="21430000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671891548703</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Configured Entities for joining tables with FluentAPI">
+      <created>1671921923400</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671921923401</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +221,7 @@
     <MESSAGE value="Created and filled Application context file" />
     <MESSAGE value="Created DbInitializer base and implemented GenericRepository. Made some adjustments to IGenericRepository.cs." />
     <MESSAGE value="implemented Dependency Injection" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Dependency Injection" />
+    <MESSAGE value="Configured Entities for joining tables with FluentAPI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configured Entities for joining tables with FluentAPI" />
   </component>
 </project>
