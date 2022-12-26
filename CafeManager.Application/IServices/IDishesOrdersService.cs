@@ -12,16 +12,10 @@ public interface IDishesOrdersService
     
     Task DeleteAsync(DishesOrders dishesOrders);
     
-    Task<DishesOrders> GetOneAsync(int id);
-    
-    Task<DishesOrders> GetOneAsync(int id, params Expression<Func<DishesOrders, object>>[] includeProperties);
-    
+    Task<DishesOrders> GetOneAsync(int dishId, int ordersNumber);
+
     Task<PagedList<DishesOrders>> GetPageAsync(PageParameters pageParameters);
-    
-    Task<PagedList<DishesOrders>> GetPageAsync(PageParameters pageParameters,
-        params Expression<Func<DishesOrders, object>>[] includeProperties);
 
     Task<PagedList<DishesOrders>> GetPageAsync(PageParameters pageParameters,
-        Expression<Func<DishesOrders, bool>> predicate,
-        params Expression<Func<DishesOrders, object>>[] includeProperties);
+        Expression<Func<DishesOrders, bool>> predicate);
 }

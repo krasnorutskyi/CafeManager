@@ -5,12 +5,11 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created repository interface for joining entities">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Implemented realisations of joining entities' repositories interfaces">
       <change afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishesProductsService.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishesOrdersService.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishesProductsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishesProductsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishesProductsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishesOrdersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishesOrdersService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
       <workItem from="1671203481977" duration="6060000" />
       <workItem from="1671390424822" duration="12055000" />
       <workItem from="1671665563366" duration="44000" />
-      <workItem from="1671665646762" duration="29711000" />
+      <workItem from="1671665646762" duration="30455000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -210,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672086395496</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implemented realisations of joining entities' repositories interfaces">
+      <created>1672087216616</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672087216616</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +262,7 @@
     <MESSAGE value="created interfaces for entities' services" />
     <MESSAGE value="Implemented services for entities" />
     <MESSAGE value="Created repository interface for joining entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created repository interface for joining entities" />
+    <MESSAGE value="Implemented realisations of joining entities' repositories interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented realisations of joining entities' repositories interfaces" />
   </component>
 </project>
