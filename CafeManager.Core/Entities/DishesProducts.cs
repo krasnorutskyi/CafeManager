@@ -6,5 +6,6 @@ public class DishesProducts
     public Dish Dish { get; set; }
     public int ProductId { get; set; }
     public Product Product { get; set; }
+    
     public float ProductsAmount { get; set; }
 }
