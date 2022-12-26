@@ -5,11 +5,10 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Configured Entities for joining tables with FluentAPI">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="created interfaces for entities' services">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Waiter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Waiter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +121,7 @@
       <workItem from="1671203481977" duration="6060000" />
       <workItem from="1671390424822" duration="12055000" />
       <workItem from="1671665563366" duration="44000" />
-      <workItem from="1671665646762" duration="21430000" />
+      <workItem from="1671665646762" duration="27878000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -180,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671921923401</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Initialized database, filled it with data, fixed entities">
+      <created>1671992098198</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671992098198</updated>
+    </task>
+    <task id="LOCAL-00010" summary="created interfaces for entities' services">
+      <created>1672003568842</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672003568842</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +235,8 @@
     <MESSAGE value="Created DbInitializer base and implemented GenericRepository. Made some adjustments to IGenericRepository.cs." />
     <MESSAGE value="implemented Dependency Injection" />
     <MESSAGE value="Configured Entities for joining tables with FluentAPI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured Entities for joining tables with FluentAPI" />
+    <MESSAGE value="Initialized database, filled it with data, fixed entities" />
+    <MESSAGE value="created interfaces for entities' services" />
+    <option name="LAST_COMMIT_MESSAGE" value="created interfaces for entities' services" />
   </component>
 </project>

@@ -1,6 +1,8 @@
 using CafeManager.Application.IRepositories;
+using CafeManager.Application.IServices;
 using CafeManager.Infrastructure.EF;
 using CafeManager.Infrastructure.Repositories;
+using CafeManager.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +22,16 @@ public static class DependencyInjection
     
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IDishService, DishService>();
+        services.AddScoped<IDishesOrdersService, DishesOrdersService>();
+        services.AddScoped<IDishesProductsService, DishesProductsService>();
+        services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<ITableService, TableService>();
+        services.AddScoped<IUnitService, UnitService>();
+        services.AddScoped<IWaiterService, WaiterService>();
+        
         return services;
     }
 }
