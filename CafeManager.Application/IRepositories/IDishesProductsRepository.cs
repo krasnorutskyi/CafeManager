@@ -19,4 +19,6 @@ public interface IDishesProductsRepository<T> where T : DishesProducts
     Task<PagedList<T>> GetPageAsync(PageParameters pageParameters);
     
     Task<PagedList<T>> GetPageAsync(PageParameters pageParameters, Expression<Func<T, bool>> predicate);
+
+    Task SaveAsync();
 }
