@@ -5,6 +5,7 @@ using CafeManager.Infrastructure.Repositories;
 using CafeManager.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CafeManager.Infrastructure;
 
@@ -16,6 +17,8 @@ public static class DependencyInjection
         services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
         
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped<IDishesProductsRepository, DishesProductsRepository>();
+        services.AddScoped<IDishesOrdersRepository, DishesOrdersRepository>(); 
         
         return services;
     }

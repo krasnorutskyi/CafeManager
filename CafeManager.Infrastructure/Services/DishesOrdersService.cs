@@ -1,5 +1,4 @@
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 using CafeManager.Application.IRepositories;
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
@@ -9,9 +8,9 @@ namespace CafeManager.Infrastructure.Services;
 
 public class DishesOrdersService : IDishesOrdersService
 {
-    private readonly IDishesOrdersRepository<DishesOrders> _dishesOrdersRepository;
-    
-    public DishesOrdersService(IDishesOrdersRepository<DishesOrders> dishesOrdersRepository)
+    private readonly IDishesOrdersRepository _dishesOrdersRepository;
+
+    public DishesOrdersService(IDishesOrdersRepository dishesOrdersRepository)
     {
         this._dishesOrdersRepository = dishesOrdersRepository;
     }

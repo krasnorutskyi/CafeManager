@@ -2,34 +2,35 @@ using System.Linq.Expressions;
 using CafeManager.Application.IRepositories;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
+using CafeManager.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 
 namespace CafeManager.Infrastructure.Repositories;
 
-public class DishesProductsRepository<T> : IDishesProductsRepository<T> where T : DishesProducts
+public class DishesProductsRepository : IDishesProductsRepository
 {
-    private readonly DbContext _db;
-    private readonly DbSet<T> _table;
+    private readonly ApplicationContext _db;
+    private readonly DbSet<DishesProducts> _table;
 
-    public DishesProductsRepository(DbContext context)
+    public DishesProductsRepository(ApplicationContext context)
     {
-        _db = context;
-        this._table = _db.Set<T>();
+        this._db = context;
+        this._table = _db.Set<DishesProducts>();
     }
 
-    public async Task AddAsync(T entity)
+    public async Task AddAsync(DishesProducts entity)
     {
         await this._table.AddAsync(entity);
         await this.SaveAsync();
     }
 
-    public async Task UpdateAsync(T entity)
+    public async Task UpdateAsync(DishesProducts entity)
     {
         this._table.Update(entity);
         await this.SaveAsync();
     }
 
-    public async Task DeleteAsync(T entity)
+    public async Task DeleteAsync(DishesProducts entity)
     {
         this._table.Remove(entity);
         await this.SaveAsync();
@@ -40,27 +41,27 @@ public class DishesProductsRepository<T> : IDishesProductsRepository<T> where T 
         this._db.AttachRange(obj);
     }
 
-    public async Task<T> GetOneAsync(int dishid, int productId)
+    public async Task<DishesProducts> GetOneAsync(int dishId, int productId)
     {
-        return await this._table.FirstOrDefaultAsync<T>(entity => entity.DishId == dishid && entity.ProductId == productId );
+        return await this._table.FirstOrDefaultAsync<DishesProducts>(entity => entity.DishId == dishId && entity.ProductId == productId );
     }
 
-    public async Task<PagedList<T>> GetPageAsync(PageParameters pageParameters)
+    public async Task<PagedList<DishesProducts>> GetPageAsync(PageParameters pageParameters)
     {
         var items = this._table.AsNoTracking()
             .Skip((pageParameters.PageNumber - 1) * pageParameters.PageSize)
             .Take(pageParameters.PageSize);
-        var pagedList = new PagedList<T>(items, pageParameters, await items.CountAsync());
+        var pagedList = new PagedList<DishesProducts>(items, pageParameters, await items.CountAsync());
         return pagedList;
     }
 
-    public async Task<PagedList<T>> GetPageAsync(PageParameters pageParameters, Expression<Func<T, bool>> predicate)
+    public async Task<PagedList<DishesProducts>> GetPageAsync(PageParameters pageParameters, Expression<Func<DishesProducts, bool>> predicate)
     {
         var items = this._table.AsNoTracking()
             .Where(predicate)
             .Skip((pageParameters.PageNumber - 1) * pageParameters.PageSize)
-            .Take(pageParameters.PageSize); ;
-        var pagedList = new PagedList<T>(items, pageParameters, await items.CountAsync());
+            .Take(pageParameters.PageSize);
+        var pagedList = new PagedList<DishesProducts>(items, pageParameters, await items.CountAsync());
         return pagedList;
     }
 
@@ -68,4 +69,5 @@ public class DishesProductsRepository<T> : IDishesProductsRepository<T> where T 
     {
         await this._db.SaveChangesAsync();
     }
+
 }

@@ -4,21 +4,19 @@ using CafeManager.Core.Entities;
 
 namespace CafeManager.Application.IRepositories;
 
-public interface IDishesProductsRepository<T> where T : DishesProducts
+public interface IDishesProductsRepository
 {
-    Task AddAsync(T entity);
+    Task AddAsync(DishesProducts entity);
 
-    Task UpdateAsync(T entity);
+    Task UpdateAsync(DishesProducts entity);
 
-    Task DeleteAsync(T entity);
+    Task DeleteAsync(DishesProducts entity);
 
     void Attach(params object[] obj);
 
-    Task<T> GetOneAsync(int idDish, int orderNumber);
+    Task<DishesProducts> GetOneAsync(int idDish, int orderNumber);
 
-    Task<PagedList<T>> GetPageAsync(PageParameters pageParameters);
-    
-    Task<PagedList<T>> GetPageAsync(PageParameters pageParameters, Expression<Func<T, bool>> predicate);
+    Task<PagedList<DishesProducts>> GetPageAsync(PageParameters pageParameters);
 
-    Task SaveAsync();
+    Task<PagedList<DishesProducts>> GetPageAsync(PageParameters pageParameters, Expression<Func<DishesProducts, bool>> predicate);
 }

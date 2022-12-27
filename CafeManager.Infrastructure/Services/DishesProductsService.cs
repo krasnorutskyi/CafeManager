@@ -8,9 +8,9 @@ namespace CafeManager.Infrastructure.Services;
 
 public class DishesProductsService : IDishesProductsService
 {
-    private readonly IDishesProductsRepository<DishesProducts> _dishesProductsRepository;
+    private readonly IDishesProductsRepository _dishesProductsRepository;
 
-    public DishesProductsService(IDishesProductsRepository<DishesProducts> dishesProductsRepository)
+    public DishesProductsService(IDishesProductsRepository dishesProductsRepository)
     {
         this._dishesProductsRepository = dishesProductsRepository;
     }

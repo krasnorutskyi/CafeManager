@@ -2,8 +2,8 @@ using CafeManager.Infrastructure;
 using CafeManager.Infrastructure.DataInitializer;
 using CafeManager.Infrastructure.EF;
 
-var dbInitializer = new DbInitializer();
-dbInitializer.Initialize(new ApplicationContext());
+// var dbInitializer = new DbInitializer();
+// dbInitializer.Initialize(new ApplicationContext());
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
