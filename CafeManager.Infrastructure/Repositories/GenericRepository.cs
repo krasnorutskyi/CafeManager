@@ -72,10 +72,14 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
 
     public async Task<PagedList<TEntity>> GetPageAsync(PageParameters pageParameters)
     {
-        var items = this._table.AsNoTracking()
+        var items = await this._table.AsNoTracking()
             .Skip((pageParameters.PageNumber - 1) * pageParameters.PageSize)
-            .Take(pageParameters.PageSize);
-        var pagedList = new PagedList<TEntity>(items, pageParameters, await items.CountAsync());
+            .Take(pageParameters.PageSize)
+            .ToListAsync();
+        
+        var itemsCount = this._table.Count();
+        var pagedList = new PagedList<TEntity>(items, pageParameters, itemsCount);
+        
         return pagedList;
     }
 
@@ -89,7 +93,8 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         {
             items = items.Include(property);
         }
-        var pagedList = new PagedList<TEntity>(items, pageParameters, await items.CountAsync());
+        var itemsCount = this._table.Count();
+        var pagedList = new PagedList<TEntity>(items, pageParameters, itemsCount);
         return pagedList;
     }
 
@@ -105,7 +110,8 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         {
             items = items.Include(property);
         }
-        var pagedList = new PagedList<TEntity>(items, pageParameters, await items.CountAsync());
+        var itemsCount = this._table.Count();
+        var pagedList = new PagedList<TEntity>(items, pageParameters, itemsCount);
         return pagedList;
     }
 

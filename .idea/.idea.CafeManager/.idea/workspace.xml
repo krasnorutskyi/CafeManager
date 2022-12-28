@@ -5,18 +5,15 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Implemented realisations of joining entities' repositories interfaces">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishesOrdersRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishesProductsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishesOrdersService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishesProductsService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishesOrdersRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishesProductsRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishesOrdersService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishesProductsService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,28 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.32839838",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32839838&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb",
-      "azure",
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;azure&quot;,
+      &quot;sqlserver&quot;
     ],
-    "rider.external.source.directories": [
-      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/vitaliy/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/vitaliy/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CafeManager">
     <configuration name="CafeManager" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CafeManager/CafeManager.csproj" />
@@ -130,7 +127,8 @@
       <workItem from="1671390424822" duration="12055000" />
       <workItem from="1671665563366" duration="44000" />
       <workItem from="1671665646762" duration="30455000" />
-      <workItem from="1672088914170" duration="8209000" />
+      <workItem from="1672088914170" duration="12358000" />
+      <workItem from="1672177639817" duration="11661000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -223,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672087216616</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed issues with joining entities">
+      <created>1672161512486</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1672161512486</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +275,7 @@
     <MESSAGE value="Implemented services for entities" />
     <MESSAGE value="Created repository interface for joining entities" />
     <MESSAGE value="Implemented realisations of joining entities' repositories interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented realisations of joining entities' repositories interfaces" />
+    <MESSAGE value="fixed issues with joining entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with joining entities" />
   </component>
 </project>
