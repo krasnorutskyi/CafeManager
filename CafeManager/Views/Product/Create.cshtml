@@ -1,0 +1,32 @@
+@model CafeManager.Core.Entities.Product
+
+@{
+}
+
+<div class="align-content-center">
+    <h1>Create Product</h1>
+</div>
+<form asp-controller="Product" asp-action="CreateProduct" method="post">
+    <div class="mb-3">
+        <label class="form-label">Product's Name</label>
+        <input asp-for="Name" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input asp-for="Quantity" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+            <label class="form-label">BestBefore</label>
+            <input asp-for="BestBefore" type="date" class="form-control"/>
+        </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">
+            <h3>Submit</h3>
+        </button>
+    </div>
+    
+</form>
