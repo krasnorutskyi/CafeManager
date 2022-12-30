@@ -37,6 +37,11 @@ public class WaiterService : IWaiterService
         return await this._waiterRepository.GetOneAsync(id);
     }
 
+    public async Task<IEnumerable<Waiter>> GetAllAsync()
+    {
+        return await this._waiterRepository.GetAllAsync();
+    }
+
     public async Task<Waiter> GetOneAsync(int id, params Expression<Func<Waiter, object>>[] includeProperties)
     {
         return await this._waiterRepository.GetOneAsync(id, includeProperties);

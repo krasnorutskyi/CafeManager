@@ -1,4 +1,4 @@
-@model CafeManager.Core.Entities.Table
+@model CafeManager.ViewModels.TableViewModel
 
 @{
 }
@@ -11,6 +11,12 @@
         <label class="form-label">Places number</label>
         <input asp-for="PlacesNumber" type="number" min="1" value="1" class="form-control"/>
     </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.WaiterId)
+        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Waiter", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.WaiterId)
+    </div>
+    
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">
             <h3>Submit</h3>

@@ -13,6 +13,7 @@ public interface IWaiterService
     Task DeleteAsync(Waiter waiter);
     
     Task<Waiter> GetOneAsync(int id);
+    Task<IEnumerable<Waiter>> GetAllAsync();
     
     Task<Waiter> GetOneAsync(int id, params Expression<Func<Waiter, object>>[] includeProperties);
     

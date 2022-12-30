@@ -5,9 +5,14 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created CRUD view for Product Entity">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Product/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Product/Index.cshtml" afterDir="false" />
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created CRUD views for the Table entity">
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IWaiterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IWaiterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/WaiterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/WaiterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/TableController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/TableController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Table/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Table/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Table/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Table/Edit.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +137,7 @@
       <workItem from="1671665563366" duration="44000" />
       <workItem from="1671665646762" duration="30455000" />
       <workItem from="1672088914170" duration="12358000" />
-      <workItem from="1672177639817" duration="37311000" />
+      <workItem from="1672177639817" duration="38744000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -260,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672408382955</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Created CRUD views for the Table entity">
+      <created>1672425776003</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1672425776003</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +324,7 @@
     <MESSAGE value=" Created CRUD views for Dish entity" />
     <MESSAGE value="Created CRUD views for Unit entity" />
     <MESSAGE value="Created CRUD view for Product Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created CRUD view for Product Entity" />
+    <MESSAGE value="Created CRUD views for the Table entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created CRUD views for the Table entity" />
   </component>
 </project>

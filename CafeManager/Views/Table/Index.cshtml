@@ -18,13 +18,14 @@
             <tr>
                 <th>Table number</th>
                 <th>Places number</th>
-                <th></th>
+                <th>Waiter</th>
             </tr>
             @foreach (var c in Model)
             {
                 <tr>
                     <td>@c.Id.ToString()</td>
                     <td>@c.PlacesNumber</td>
+                    <td>@c.Waiter.LastName</td>
                     <td><a href="/Table/Edit/@c.Id.ToString()" style="width: 100px" class="btn btn-warning">Edit</a>
                         <a href="/Table/DeleteTable/@c.Id.ToString()" style="width: 100px" class="btn btn-danger">Delete</a></td>
                 </tr>

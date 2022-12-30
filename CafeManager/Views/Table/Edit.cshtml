@@ -1,4 +1,4 @@
-@model CafeManager.Core.Entities.Table
+@model CafeManager.ViewModels.TableViewModel
 
 @{
 }
@@ -6,13 +6,18 @@
 <div class="align-content-center">
     <h1>Edit Table</h1>
 </div>
-<form asp-controller="Unit" asp-action="EditUnit" method="post">
+<form asp-controller="Table" asp-action="EditTable" method="post">
     <div class="mb-3">
         <input asp-for="Id" type="hidden" class="form-control" />
     </div>
     <div class="mb-3">
         <label class="form-label">Places number</label>
         <input asp-for="PlacesNumber" type="number" class="form-control" min="1" value = "@Model.PlacesNumber"/>
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.WaiterId)
+        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Waiter", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.WaiterId)
     </div>
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">
