@@ -1,0 +1,20 @@
+@model CafeManager.Core.Entities.Table
+
+@{
+}
+
+<div class="align-content-center">
+    <h1>Create Table</h1>
+</div>
+<form asp-controller="Table" asp-action="CreateTable" method="post">
+    <div class="mb-3">
+        <label class="form-label">Places number</label>
+        <input asp-for="PlacesNumber" type="number" min="1" value="1" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">
+            <h3>Submit</h3>
+        </button>
+    </div>
+    
+</form>

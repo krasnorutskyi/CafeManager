@@ -1,37 +1,32 @@
-@model CafeManager.Application.Paging.PagedList<CafeManager.Core.Entities.Product>
+@model CafeManager.Application.Paging.PagedList<CafeManager.Core.Entities.Table>
+
 @{
-    ViewData["Title"] = "Home Page";
+    
 }
 
 <div class="text-center mb-4">
-    <h1> Product </h1>
+    <h1> Tables </h1>
 </div>
 <div>
     <div class="p-3 d-flex justify-content-end">
-        <a href="/Product/Create" class="btn rounded-circle btn-secondary">+</a>
+        <a href="/Table/Create" class="btn rounded-circle btn-secondary">+</a>
     </div>
     <div><h1></h1></div>
 
     <div class="container">
         <table class="table table-bordered table-responsive table-hover border border-0 border-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Best Before</th>
-                <th>Actions</th>
+                <th>Table number</th>
+                <th>Places number</th>
+                <th></th>
             </tr>
             @foreach (var c in Model)
             {
                 <tr>
                     <td>@c.Id.ToString()</td>
-                    <td>@c.Name</td>
-                    <td>@c.Quantity</td>
-                    <td>@c.Price</td>
-                    <td>@c.BestBefore.Date.ToString("dd-MM-yyyy")</td>
-                    <td><a href="/Product/Edit/@c.Id.ToString()"  class="btn btn-warning w-50">Edit</a>
-                        <a href="/Product/DeleteProduct/@c.Id.ToString()"  class="btn btn-danger w-50">Delete</a></td>
+                    <td>@c.PlacesNumber</td>
+                    <td><a href="/Table/Edit/@c.Id.ToString()" style="width: 100px" class="btn btn-warning">Edit</a>
+                        <a href="/Table/DeleteTable/@c.Id.ToString()" style="width: 100px" class="btn btn-danger">Delete</a></td>
                 </tr>
             }
         </table>
