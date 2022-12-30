@@ -5,19 +5,9 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/ICategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IUnitService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IUnitService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Dish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Dish.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/UnitService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/UnitService.cs" afterDir="false" />
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment=" Created CRUD views for Dish entity">
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Category/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Category/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +37,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PageParameters.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PagedList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Core/Entities/Category.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/Repositories/GenericRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -139,7 +130,7 @@
       <workItem from="1671665563366" duration="44000" />
       <workItem from="1671665646762" duration="30455000" />
       <workItem from="1672088914170" duration="12358000" />
-      <workItem from="1672177639817" duration="34589000" />
+      <workItem from="1672177639817" duration="34946000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -246,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672246516533</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=" Created CRUD views for Dish entity">
+      <created>1672406999954</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672406999958</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +293,7 @@
     <MESSAGE value="Implemented realisations of joining entities' repositories interfaces" />
     <MESSAGE value="fixed issues with joining entities" />
     <MESSAGE value="Created CRUD-UI for Category entity." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created CRUD-UI for Category entity." />
+    <MESSAGE value=" Created CRUD views for Dish entity" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Created CRUD views for Dish entity" />
   </component>
 </project>
