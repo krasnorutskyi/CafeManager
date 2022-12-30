@@ -1,0 +1,72 @@
+
+@model CafeManager.ViewModels.DishViewModel
+
+@{
+}
+
+<div class="align-content-center">
+    <h1>Create Dish</h1>
+</div>
+<form asp-controller="Dish" asp-action="Create" method="post">
+<div class="mb-3">
+        <input asp-for="Id" type="hidden" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <input asp-for="CategoryList" type="hidden" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <input asp-for="UnitList" type="hidden" class="form-control"/>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.CategoryId)
+        @Html.DropDownListFor(model => model.CategoryId, Model.CategoryList, "Select Category", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.CategoryId)
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Complexity</label>
+        <input asp-for="Complexity" type="number" min="1" max="5" class="form-control" value="1"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Volume</label>
+        <input asp-for="Volume" type="text" class="form-control"/>
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(m => m.UnitId)
+        @Html.DropDownListFor(model => model.UnitId, Model.UnitList, "Select Unit", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.UnitId)
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Sales</label>
+        <input asp-for="Sales" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Calories</label>
+        <input asp-for="Calories" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input asp-for="Image" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input asp-for="Description" type="text" class="form-control"/>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">
+            <h3>Submit</h3>
+        </button>
+    </div>
+
+</form>

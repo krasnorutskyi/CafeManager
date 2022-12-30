@@ -7,14 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/ICategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IUnitService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IUnitService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Dish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Dish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/CategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/UnitService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/UnitService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +45,16 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PageParameters.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PagedList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/Repositories/GenericRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cc477141a9a15fde3b7c58ecd2739d1a38ca92f945ec7c8b78e90193b11c5/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86d9944d7dc6247b332d77355bfabdb7cd68928cf33921b80ea70c795ef7c26/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ea828ecade990e734efaeed875732552144166cbef844dfca077e91b3e6e/ModelValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9156f7f7d7fe31ecb86103c74e89e22a5242a153d4ccf14e354685cb3fb7b5/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce719136c12653cd464ae0b247771f618b92f8beec14c1010b5278a7d0fd1f/DbContextServices.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -128,7 +139,7 @@
       <workItem from="1671665563366" duration="44000" />
       <workItem from="1671665646762" duration="30455000" />
       <workItem from="1672088914170" duration="12358000" />
-      <workItem from="1672177639817" duration="11661000" />
+      <workItem from="1672177639817" duration="34589000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -228,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672161512486</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created CRUD-UI for Category entity.">
+      <created>1672246516532</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1672246516533</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +294,7 @@
     <MESSAGE value="Created repository interface for joining entities" />
     <MESSAGE value="Implemented realisations of joining entities' repositories interfaces" />
     <MESSAGE value="fixed issues with joining entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with joining entities" />
+    <MESSAGE value="Created CRUD-UI for Category entity." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created CRUD-UI for Category entity." />
   </component>
 </project>

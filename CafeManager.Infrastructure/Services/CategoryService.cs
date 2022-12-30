@@ -31,6 +31,11 @@ public class CategoryService : ICategoryService
     {
         await this._categoryRepository.DeleteAsync(category);
     }
+    
+    public async Task<IEnumerable<Category>> GetAllAsync()
+    {
+        return await this._categoryRepository.GetAllAsync();
+    }
 
     public async Task<Category> GetOneAsync(int id)
     {

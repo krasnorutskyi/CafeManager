@@ -12,8 +12,10 @@ public interface IUnitService
     
     Task DeleteAsync(Unit unit);
     
-    Task<Unit> GetOneAsync(int id);
+    Task<IEnumerable<Unit>> GetAllAsync();
     
+    Task<Unit> GetOneAsync(int id);
+
     Task<Unit> GetOneAsync(int id, params Expression<Func<Unit, object>>[] includeProperties);
     
     Task<PagedList<Unit>> GetPageAsync(PageParameters pageParameters);

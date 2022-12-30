@@ -13,7 +13,9 @@ public interface ICategoryService
     Task DeleteAsync(Category category);
     
     Task<Category> GetOneAsync(int id);
-    
+
+    Task<IEnumerable<Category>> GetAllAsync();
+
     Task<Category> GetOneAsync(int id, params Expression<Func<Category, object>>[] includeProperties);
     
     Task<PagedList<Category>> GetPageAsync(PageParameters pageParameters);

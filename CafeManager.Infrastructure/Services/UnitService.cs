@@ -32,6 +32,11 @@ public class UnitService : IUnitService
         await this._unitRepository.DeleteAsync(unit);
     }
 
+    public async Task<IEnumerable<Unit>> GetAllAsync()
+    {
+        return await this._unitRepository.GetAllAsync();
+    }
+
     public async Task<Unit> GetOneAsync(int id)
     {
         return await this._unitRepository.GetOneAsync(id);

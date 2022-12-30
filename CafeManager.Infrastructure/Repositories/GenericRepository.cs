@@ -57,6 +57,12 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
 
         return await query.FirstOrDefaultAsync<TEntity>(entity => entity.Id == id);
     }
+    
+    public async Task<IEnumerable<TEntity>> GetAllAsync()
+    {
+        var query = this._table.AsNoTracking();
+        return await query.ToListAsync<TEntity>();
+    }
 
     public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate,
         params Expression<Func<TEntity, object>>[] includeProperties)

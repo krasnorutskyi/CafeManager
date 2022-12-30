@@ -14,7 +14,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         var connectionString = @"Server=localhost,1433;Database=Cafe;User Id=SA;Password=12345678;TrustServerCertificate=true;";
-        services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+        services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString), ServiceLifetime.Transient);
         
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IDishesProductsRepository, DishesProductsRepository>();
