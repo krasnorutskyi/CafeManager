@@ -1,0 +1,30 @@
+@model CafeManager.Application.Paging.PagedList<CafeManager.Core.Entities.Order>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mb-4">
+    <h1> Orders </h1>
+    <div class="p-3 d-flex justify-content-end">
+        <a href="/Order/Create" class="btn rounded-circle btn-secondary">+</a>
+    </div>
+    
+    <div><h1></h1></div>
+</div>
+<div>
+    <table class="table table-bordered table-responsive table-hover border border-0 border-dark">
+        <tr>
+            <th>Order Number</th>
+        </tr>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Id <a href="/Order/Details/@d.Id.ToString()" style="width: 100px" class="btn btn-secondary float-end">Details</a> </td>
+                
+            </tr>
+        }
+
+    </table>
+
+</div>
+

@@ -12,7 +12,7 @@ public class OrderService : IOrderService
 
     public OrderService(IGenericRepository<Order> orderRepository)
     {
-        this._orderRepository = _orderRepository;
+        this._orderRepository = orderRepository;
     }
 
     public async Task AddAsync(Order order)

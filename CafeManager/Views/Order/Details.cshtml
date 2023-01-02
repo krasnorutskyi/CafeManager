@@ -1,0 +1,29 @@
+@model CafeManager.Core.Entities.Order
+
+@{
+    
+}
+
+
+
+<div class="align-content-center">
+    <h1> Order Details</h1>
+</div>
+<div>
+    <h3>Order's Number - @Model.Id</h3>
+    <h3>Date – @Model.Date.ToString()</h3>
+    <h3>Total Price – @Model.Price</h3>
+    <h3>Waiter's tipp – @Model.Tipp</h3>
+    <h3>Waiter – @Model.Waiter.LastName @Model.Waiter.FirstName</h3>
+    <h3>Value Added Tax – @Model.VAT</h3>
+    @if (Model.HasClientsSale)
+    {
+        <h3>Client's Sale – 5%</h3>
+    }
+    else
+    {
+        <h3>No client's sale</h3>
+    }
+
+
+</div>

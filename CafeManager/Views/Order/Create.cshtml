@@ -1,0 +1,44 @@
+
+@model CafeManager.ViewModels.OrderViewModel
+
+@{
+}
+
+<div class="align-content-center">
+    <h1>Create Order</h1>
+</div>
+<form asp-controller="Order" asp-action="Create" method="post">
+    <input asp-for="Date" type="hidden" class="form-control" value="DateTime.Now"/>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" type="number" class="form-control"/>
+    </div>
+    <div class="mb-3">
+            <label class="form-label">Waiter's Tipp</label>
+            <input asp-for="Tipp" type="number" value="0" class="form-control"/>
+        </div>
+    <div class="mb-3">
+        <label class="form-label">Waiter</label>
+        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Category", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.WaiterId)
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Has Client's Sale</label>
+        <br/>
+        <input data-val="true" 
+               data-val-required="The Has Client's Sale field is required." 
+               asp-for="HasClientsSale"
+               name="HasClientsSale" 
+               type="checkbox" 
+               value="true" />
+
+        <input name="isActive" type="hidden" value="false" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">
+            <h3>Submit</h3>
+        </button>
+    </div>
+
+</form>
