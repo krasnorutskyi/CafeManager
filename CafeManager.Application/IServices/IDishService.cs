@@ -14,6 +14,8 @@ public interface IDishService
     
     Task<Dish> GetOneAsync(int id);
     
+    Task<IEnumerable<Dish>> GetAllAsync();
+    
     Task<Dish> GetOneAsync(int id, params Expression<Func<Dish, object>>[] includeProperties);
     
     Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters);

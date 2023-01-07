@@ -11,11 +11,15 @@ public class OrderController : Controller
 {
     private readonly IOrderService _orderService;
     private readonly IWaiterService _waiterService;
+    private readonly IDishService _dishService;
+    private readonly IDishesOrdersService _dishesOrdersService;
 
-    public OrderController(IOrderService orderService, IWaiterService waiterService)
+    public OrderController(IOrderService orderService, IWaiterService waiterService, IDishService dishService, IDishesOrdersService dishesOrdersService)
     {
         this._orderService = orderService;
         this._waiterService = waiterService;
+        this._dishService = dishService;
+        this._dishesOrdersService = dishesOrdersService;
     }
     // GET
     public async Task<IActionResult> Index(PageParameters pageParameters)
@@ -31,6 +35,7 @@ public class OrderController : Controller
     {
         var orderViewModel = new OrderViewModel();
         orderViewModel.WaiterList = await this.PopulateWaitersDropDownList();
+        orderViewModel.Dishes = (List<Dish>) await this._dishService.GetAllAsync();
         return View(orderViewModel);
     }
     
@@ -38,27 +43,38 @@ public class OrderController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(OrderViewModel orderViewModel)
     {
-        if (orderViewModel.HasClientsSale)
-        {
-            orderViewModel.Price = (float)(orderViewModel.Price * 0.95);
-        }
+        
         var order = new Order
         {
-            Date = orderViewModel.Date,
-            Price = orderViewModel.Price,
+            Date = DateTime.Today,
             Tipp = orderViewModel.Tipp,
             HasClientsSale = orderViewModel.HasClientsSale,
-            VAT = (float)(orderViewModel.Price * 0.2),
             WaiterId = orderViewModel.WaiterId,
-            Waiter = await this._waiterService.GetOneAsync(orderViewModel.WaiterId)
+            Waiter = await this._waiterService.GetOneAsync(orderViewModel.WaiterId),
+            DishesOrders = new List<DishesOrders>()
         };
+        var price = 0.0;
+        foreach (var d in orderViewModel.DishesOrdersList)
+        {
+            d.Dish = await this._dishService.GetOneAsync(d.DishId);
+            d.DishName = d.Dish.Name;
+            d.DishesTotal = d.Dish.Price * d.DishesAmount;
+            price += d.DishesTotal;
+            order.DishesOrders.Add(d);
+        }
+        if (orderViewModel.HasClientsSale)
+        {
+            price *= 0.95;
+        }
+        order.Price = (float)price;
+        order.VAT = (float)(price * 0.2);
         await this._orderService.AddAsync(order);
         return RedirectToAction("Index");
     }
 
     public async Task<IActionResult> Details(int id)
     {
-        var order = await this._orderService.GetOneAsync(id, o=> o.Waiter);
+        var order = await this._orderService.GetOneAsync(id, o=> o.Waiter, o => o.DishesOrders);
         return View(order);
     }
     

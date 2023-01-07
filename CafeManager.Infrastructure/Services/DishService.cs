@@ -42,6 +42,11 @@ public class DishService : IDishService
         return await this._dishRepository.GetOneAsync(id, includeProperties);
     }
 
+    public async Task<IEnumerable<Dish>> GetAllAsync()
+    {
+        return await this._dishRepository.GetAllAsync();
+    }
+
     public async Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters)
     {
         return await this._dishRepository.GetPageAsync(pageParameters);

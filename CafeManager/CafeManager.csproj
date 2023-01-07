@@ -16,4 +16,8 @@
       <ProjectReference Include="..\CafeManager.Infrastructure\CafeManager.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\DishesOrders\Create.cshtml" />
+    </ItemGroup>
+
 </Project>

@@ -1,4 +1,3 @@
-
 @model CafeManager.ViewModels.OrderViewModel
 
 @{
@@ -7,34 +6,44 @@
 <div class="align-content-center">
     <h1>Create Order</h1>
 </div>
-<form asp-controller="Order" asp-action="Create" method="post">
-    <input asp-for="Date" type="hidden" class="form-control" value="DateTime.Now"/>
+<form id="form" asp-controller="Order" asp-action="Create" method="post">
     <div class="mb-3">
-        <label class="form-label">Price</label>
-        <input asp-for="Price" type="number" class="form-control"/>
+        <label class="form-label">Waiter's Tipp</label>
+        <input asp-for="Tipp" type="number" value="0" class="form-control"/>
     </div>
     <div class="mb-3">
-            <label class="form-label">Waiter's Tipp</label>
-            <input asp-for="Tipp" type="number" value="0" class="form-control"/>
-        </div>
-    <div class="mb-3">
         <label class="form-label">Waiter</label>
-        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Category", new {@class = "form-control"})
+        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Waiter", new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.WaiterId)
     </div>
 
     <div class="mb-3">
         <label class="form-label">Has Client's Sale</label>
         <br/>
-        <input data-val="true" 
+        <input class="form-check-input" data-val="true" 
                data-val-required="The Has Client's Sale field is required." 
                asp-for="HasClientsSale"
                name="HasClientsSale" 
                type="checkbox" 
                value="true" />
-
-        <input name="isActive" type="hidden" value="false" />
     </div>
+    <div class="m-3 row">
+        @{
+            for (int i = 0; i < Model.Dishes.Count(); i++)
+            {
+                <div class="card m-1 col-auto">
+                    <div class="card-body d-flex flex-row">
+                        <input id = "@i+Dish" onclick="check(this)" value="@Model.Dishes[i].Id" class="form-check-input me-1" type="checkbox"/>
+                        <p class="mb-0" style="margin-right: 10px;">@Model.Dishes[i].Name</p>
+                        <input asp-for="DishesOrdersList[i].DishesAmount" id = "@i" class="form-control" style="width: 50px" disabled type = "number"/>
+                    </div>
+                </div>
+            }
+            
+        }
+    </div>
+    
+
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">
             <h3>Submit</h3>
@@ -42,3 +51,30 @@
     </div>
 
 </form>
+
+<script>
+var dishesCount = 0;
+function check(element){
+       var str = element.id;
+       if(element.checked){
+           document.getElementById(str.substring(0, str.indexOf("+"))).disabled = false;
+           document.getElementById(str.substring(0, str.indexOf("+"))).value = 1;
+           
+           var input1 = document.createElement("input");
+           input1.setAttribute("type", "hidden");
+           input1.setAttribute("id", "Dish" + element.value);
+           input1.setAttribute("name", `DishesOrdersList[${dishesCount}].DishId`);
+           input1.setAttribute("value", element.value);
+           document.getElementById("form").appendChild(input1);
+           
+           dishesCount++;
+       }else{
+           document.getElementById(str.substring(0, str.indexOf("+"))).disabled = true;
+           document.getElementById(str.substring(0, str.indexOf("+"))).value = null;
+           document.getElementById("Dish" + element.value).remove();
+           document.getElementById("DishAmount" + element.value).remove();
+           dishesCount--;
+       }
+}
+</script>
+

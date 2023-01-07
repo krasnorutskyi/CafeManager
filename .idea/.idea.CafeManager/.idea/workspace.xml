@@ -5,11 +5,17 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created CRUD views for Waiter Entity">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/DishesOrders.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/DishesOrders.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/ViewModels/OrderViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/ViewModels/OrderViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +43,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PageParameters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Application/Paging/PagedList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Core/Entities/Category.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/Repositories/GenericRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cc477141a9a15fde3b7c58ecd2739d1a38ca92f945ec7c8b78e90193b11c5/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
@@ -66,29 +64,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.32839838",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.32839838&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb",
-      "azure",
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;azure&quot;,
+      &quot;sqlserver&quot;
     ],
-    "rider.external.source.directories": [
-      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/vitaliy/.local/share/Symbols/src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/vitaliy/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/vitaliy/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.CafeManager">
     <configuration name="CafeManager" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CafeManager/CafeManager.csproj" />
@@ -138,6 +136,7 @@
       <workItem from="1671665646762" duration="30455000" />
       <workItem from="1672088914170" duration="12358000" />
       <workItem from="1672177639817" duration="47403000" />
+      <workItem from="1672842214426" duration="22042000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -342,5 +341,12 @@
     <MESSAGE value="Minor fixes" />
     <MESSAGE value="Created CRUD views for Waiter Entity" />
     <option name="LAST_COMMIT_MESSAGE" value="Created CRUD views for Waiter Entity" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#CafeManager.Core.Entities.EntityBase" memberName="Id" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
