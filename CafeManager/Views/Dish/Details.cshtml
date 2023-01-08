@@ -12,3 +12,8 @@
 <div>
     <img src = "@Model.Image" width="500px"/>
 </div>
+<div>
+    @{
+            Html.RenderPartial("_DishesProducts", Model.DishesProducts);
+        }
+</div>

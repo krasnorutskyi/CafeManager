@@ -16,6 +16,8 @@ public interface IProductService
     
     Task<Product> GetOneAsync(int id, params Expression<Func<Product, object>>[] includeProperties);
     
+    Task<IEnumerable<Product>> GetAllAsync();
+    
     Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters);
     
     Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters,

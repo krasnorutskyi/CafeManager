@@ -3,14 +3,15 @@ using CafeManager.Application.IRepositories;
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
+using CafeManager.Infrastructure.Repositories;
 
 namespace CafeManager.Infrastructure.Services;
 
 public class DishService : IDishService
 {
-    private readonly IGenericRepository<Dish> _dishRepository;
+    private readonly IDishRepository _dishRepository;
 
-    public DishService(IGenericRepository<Dish> dishRepository)
+    public DishService(IDishRepository dishRepository)
     {
         this._dishRepository = dishRepository;
     }
@@ -35,6 +36,11 @@ public class DishService : IDishService
     public async Task<Dish> GetOneAsync(int id)
     {
         return await this._dishRepository.GetOneAsync(id);
+    }
+
+    public async Task<Dish> GetDishWithRelatedAsync(int id)
+    {
+        return await this._dishRepository.GetDishWithRelatedAsync(id);
     }
 
     public async Task<Dish> GetOneAsync(int id, params Expression<Func<Dish, object>>[] includeProperties)

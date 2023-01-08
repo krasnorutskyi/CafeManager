@@ -7,7 +7,7 @@
 <div class="align-content-center">
     <h1>Create Dish</h1>
 </div>
-<form asp-controller="Dish" asp-action="Create" method="post">
+<form id="form" asp-controller="Dish" asp-action="Create" method="post">
 <div class="mb-3">
         <input asp-for="Id" type="hidden" class="form-control"/>
     </div>
@@ -27,7 +27,7 @@
         <input asp-for="Price" type="text" class="form-control"/>
     </div>
     <div class="mb-3">
-        @Html.LabelFor(m => m.CategoryId)
+        <label class="form-label">Category</label>
         @Html.DropDownListFor(model => model.CategoryId, Model.CategoryList, "Select Category", new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.CategoryId)
     </div>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-3">
-        @Html.LabelFor(m => m.UnitId)
+        <label class="form-label">Unit</label>
         @Html.DropDownListFor(model => model.UnitId, Model.UnitList, "Select Unit", new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.UnitId)
     </div>
@@ -62,11 +62,64 @@
         <label class="form-label">Description</label>
         <input asp-for="Description" type="text" class="form-control"/>
     </div>
+    
+    <div class="m-3 row">
+            @{
+                for (int i = 0; i < Model.Products.Count(); i++)
+                {
+                    <div class="card m-1 col-auto">
+                        <div class="card-body d-flex flex-row">
+                            <input id = "@i+Product" onclick="check(this)" value="@Model.Products[i].Id" class="form-check-input me-1" type="checkbox"/>
+                            <p class="mb-0" style="margin-right: 10px;">@Model.Products[i].Name</p>
+                            <input id = "@Model.Products[i].Id" onchange="change(this)" class="form-control" style="width: 100px" disabled type = "number"/>
+                        </div>
+                    </div>
+                }
+                
+            }
+        </div>
 
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">
             <h3>Submit</h3>
         </button>
     </div>
-
 </form>
+
+<script>
+var productsCount = 0;
+function check(element){
+       var str = element.id;
+       if(element.checked){
+           document.getElementById(element.value).disabled = false;
+           document.getElementById(element.value).value = 1;
+           
+           var input1 = document.createElement("input");
+           input1.setAttribute("type", "hidden");
+           input1.setAttribute("id", "Product" + element.value);
+           input1.setAttribute("name", `DishesProductsList[${productsCount}].ProductId`);
+           input1.setAttribute("value", element.value);
+           document.getElementById("form").appendChild(input1);
+                    
+            var input2 = document.createElement("input");
+                                 input2.setAttribute("type", "hidden");
+                                 input2.setAttribute("id", "ProductsAmount" + element.value);
+                                 input2.setAttribute("name", `DishesProductsList[${productsCount}].ProductsAmount`);
+                                 input2.setAttribute("value", 1);
+                                 document.getElementById("form").appendChild(input2);
+           
+           productsCount++;
+       }else{
+           document.getElementById(element.value).disabled = true;
+           document.getElementById(element.value).value = null;
+           document.getElementById("Product" + element.value).remove();
+           document.getElementById("ProductsAmount" + element.value).remove();
+           productsCount--;
+       }
+}
+
+function change(element){
+    document.getElementById("ProductsAmount"+element.id).value = element.value;
+}
+
+</script>

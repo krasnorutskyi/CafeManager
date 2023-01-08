@@ -1,3 +1,4 @@
+using CafeManager.Core.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CafeManager.ViewModels;
@@ -16,6 +17,9 @@ public class DishViewModel
     public string Image { get; set; }
     public string Description { get; set; }
     
+    public List<Product> Products { get; set; }
+    public List<DishesProducts> DishesProductsList { get; set; }
+
     public IEnumerable<SelectListItem> CategoryList { get; set; }
     public IEnumerable<SelectListItem> UnitList { get; set; }
 }

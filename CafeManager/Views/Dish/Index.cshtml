@@ -17,7 +17,7 @@
         @foreach (var d in Model)
         {
             <div class="col-4">
-                <img src="@d.Image" class="w-100"/>
+                <img src="@d.Image" style="object-fit: cover" class="w-100 h-100"/>
                 <h3>@d.Name, @d.Price.ToString()</h3>
                 <div class="btn-group" role="group" aria-label="Basic example">
                   <a href="/Dish/Edit/@d.Id.ToString()" type="button" class="btn btn-outline-secondary">Edit</a>

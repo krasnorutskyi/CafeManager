@@ -42,6 +42,11 @@ public class ProductService : IProductService
         return await this._productRepository.GetOneAsync(id, includeProperties);
     }
 
+    public async Task<IEnumerable<Product>> GetAllAsync()
+    {
+        return await this._productRepository.GetAllAsync();
+    }
+
     public async Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters)
     {
         return await this._productRepository.GetPageAsync(pageParameters);

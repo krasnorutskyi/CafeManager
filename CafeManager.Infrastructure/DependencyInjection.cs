@@ -17,9 +17,7 @@ public static class DependencyInjection
         services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString), ServiceLifetime.Transient);
         
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        services.AddScoped<IDishesProductsRepository, DishesProductsRepository>();
-        services.AddScoped<IDishesOrdersRepository, DishesOrdersRepository>(); 
-        
+        services.AddScoped<IDishRepository, DishRepository>();
         return services;
     }
     
@@ -27,8 +25,6 @@ public static class DependencyInjection
     {
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IDishService, DishService>();
-        services.AddScoped<IDishesOrdersService, DishesOrdersService>();
-        services.AddScoped<IDishesProductsService, DishesProductsService>();
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ITableService, TableService>();

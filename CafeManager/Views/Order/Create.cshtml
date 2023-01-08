@@ -35,7 +35,7 @@
                     <div class="card-body d-flex flex-row">
                         <input id = "@i+Dish" onclick="check(this)" value="@Model.Dishes[i].Id" class="form-check-input me-1" type="checkbox"/>
                         <p class="mb-0" style="margin-right: 10px;">@Model.Dishes[i].Name</p>
-                        <input asp-for="DishesOrdersList[i].DishesAmount" id = "@i" class="form-control" style="width: 50px" disabled type = "number"/>
+                        <input id = "@Model.Dishes[i].Id" onchange="change(this)" class="form-control" style="width: 50px" disabled type = "number"/>
                     </div>
                 </div>
             }
@@ -57,8 +57,8 @@ var dishesCount = 0;
 function check(element){
        var str = element.id;
        if(element.checked){
-           document.getElementById(str.substring(0, str.indexOf("+"))).disabled = false;
-           document.getElementById(str.substring(0, str.indexOf("+"))).value = 1;
+           document.getElementById(element.value).disabled = false;
+           document.getElementById(element.value).value = 1;
            
            var input1 = document.createElement("input");
            input1.setAttribute("type", "hidden");
@@ -67,14 +67,25 @@ function check(element){
            input1.setAttribute("value", element.value);
            document.getElementById("form").appendChild(input1);
            
+           var input2 = document.createElement("input");
+                      input2.setAttribute("type", "hidden");
+                      input2.setAttribute("id", "DishAmount" + element.value);
+                      input2.setAttribute("name", `DishesOrdersList[${dishesCount}].DishesAmount`);
+                      input2.setAttribute("value", 1);
+                      document.getElementById("form").appendChild(input2);
+           
            dishesCount++;
        }else{
-           document.getElementById(str.substring(0, str.indexOf("+"))).disabled = true;
-           document.getElementById(str.substring(0, str.indexOf("+"))).value = null;
+           document.getElementById(element.value).disabled = true;
+           document.getElementById(element.value).value = null;
            document.getElementById("Dish" + element.value).remove();
            document.getElementById("DishAmount" + element.value).remove();
            dishesCount--;
        }
+}
+
+function change(element){
+    document.getElementById("DishAmount"+element.id).value = element.value;
 }
 </script>
 

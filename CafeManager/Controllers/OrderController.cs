@@ -12,14 +12,14 @@ public class OrderController : Controller
     private readonly IOrderService _orderService;
     private readonly IWaiterService _waiterService;
     private readonly IDishService _dishService;
-    private readonly IDishesOrdersService _dishesOrdersService;
+    private readonly IProductService _productService;
 
-    public OrderController(IOrderService orderService, IWaiterService waiterService, IDishService dishService, IDishesOrdersService dishesOrdersService)
+    public OrderController(IOrderService orderService, IWaiterService waiterService, IDishService dishService, IProductService productService)
     {
         this._orderService = orderService;
         this._waiterService = waiterService;
         this._dishService = dishService;
-        this._dishesOrdersService = dishesOrdersService;
+        this._productService = productService;
     }
     // GET
     public async Task<IActionResult> Index(PageParameters pageParameters)
@@ -57,6 +57,15 @@ public class OrderController : Controller
         foreach (var d in orderViewModel.DishesOrdersList)
         {
             d.Dish = await this._dishService.GetOneAsync(d.DishId);
+            var dish = await this._dishService.GetDishWithRelatedAsync(d.DishId);
+            foreach (var p in dish.DishesProducts)
+            {
+                var product = await this._productService.GetOneAsync(p.ProductId);
+                product.Quantity -= p.ProductsAmount * d.DishesAmount;
+                await this._productService.UpdateAsync(product);
+            }
+            d.Dish.Sales += d.DishesAmount;
+            await this._dishService.UpdateAsync(d.Dish);
             d.DishName = d.Dish.Name;
             d.DishesTotal = d.Dish.Price * d.DishesAmount;
             price += d.DishesTotal;

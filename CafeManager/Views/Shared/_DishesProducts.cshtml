@@ -1,0 +1,20 @@
+@model List<CafeManager.Core.Entities.DishesProducts>
+@{
+}
+
+
+<table class="table table-bordered table-responsive table-hover border border-0 border-dark">
+    <tr>
+        <th>Product</th>
+        <th>Product Amount</th>
+    </tr>
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.ProductName</td>
+            <td>@d.ProductsAmount</td>
+        </tr>
+    }
+
+</table>
+

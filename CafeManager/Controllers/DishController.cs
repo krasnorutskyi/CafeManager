@@ -12,13 +12,14 @@ public class DishController : Controller
     private readonly IDishService _dishService;
     private readonly ICategoryService _categoryService;
     private readonly IUnitService _unitService;
-
-    public DishController(IDishService dishService, ICategoryService categoryService, IUnitService unitService)
+    private readonly IProductService _productService;
+    
+    public DishController(IDishService dishService, ICategoryService categoryService, IUnitService unitService, IProductService productService)
     {
         this._dishService = dishService;
         this._categoryService = categoryService;
         this._unitService = unitService;
-        
+        this._productService = productService;
     }
 
     // GET
@@ -37,9 +38,11 @@ public class DishController : Controller
     }
     
     // GET
+    [HttpGet]
     public async Task<IActionResult> Create()
     {
         var dish = new DishViewModel();
+        dish.Products = (List<Product>)await this._productService.GetAllAsync();
         dish.CategoryList = await PopulateCategoriesDropDownList();
         dish.UnitList = await PopulateUnitsDropDownList();
         
@@ -63,15 +66,24 @@ public class DishController : Controller
             Sales = dishViewModel.Sales,
             Calories = dishViewModel.Calories,
             Image = dishViewModel.Image,
-            Description = dishViewModel.Description
+            Description = dishViewModel.Description,
+            DishesProducts = new List<DishesProducts>()
         };
 
-        if (!ModelState.IsValid)
+        foreach (var d in dishViewModel.DishesProductsList)
         {
-            dishViewModel.CategoryList = await PopulateCategoriesDropDownList();
-            dishViewModel.UnitList = await PopulateUnitsDropDownList();
-            return View(dishViewModel);
+            d.Product = await this._productService.GetOneAsync(d.ProductId);
+            d.ProductName = d.Product.Name;
+            dish.DishesProducts.Add(d);
         }
+        
+        // if (!ModelState.IsValid)
+        // {
+        //     dishViewModel.Products = (List<Product>)await this._productService.GetAllAsync();
+        //     dishViewModel.CategoryList = await PopulateCategoriesDropDownList();
+        //     dishViewModel.UnitList = await PopulateUnitsDropDownList();
+        //     return View(dishViewModel);
+        // }
         
         await this._dishService.AddAsync(dish);
         return RedirectToAction("Index");
@@ -134,7 +146,7 @@ public class DishController : Controller
 
     public async Task<IActionResult> Details(int id)
     {
-        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit);
+        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit, d=>d.DishesProducts);
         return View(dish);
     }
     
