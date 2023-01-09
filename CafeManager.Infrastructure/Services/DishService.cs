@@ -24,7 +24,7 @@ public class DishService : IDishService
 
     public async Task UpdateAsync(Dish dish)
     {
-        this._dishRepository.Attach(dish);
+        
         await this._dishRepository.UpdateAsync(dish);
     }
 

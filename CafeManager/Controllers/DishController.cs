@@ -76,25 +76,19 @@ public class DishController : Controller
             d.ProductName = d.Product.Name;
             dish.DishesProducts.Add(d);
         }
-        
-        // if (!ModelState.IsValid)
-        // {
-        //     dishViewModel.Products = (List<Product>)await this._productService.GetAllAsync();
-        //     dishViewModel.CategoryList = await PopulateCategoriesDropDownList();
-        //     dishViewModel.UnitList = await PopulateUnitsDropDownList();
-        //     return View(dishViewModel);
-        // }
-        
+
         await this._dishService.AddAsync(dish);
         return RedirectToAction("Index");
     }
     
     // GET
+    [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
-        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit);
+        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit, d => d.DishesProducts);
         var dishViewModel = new DishViewModel
         {
+            //Id = id,
             Name = dish.Name,
             Price = dish.Price,
             CategoryId = dish.CategoryId,
@@ -106,7 +100,9 @@ public class DishController : Controller
             Image = dish.Image,
             Description = dish.Description,
             CategoryList = await PopulateCategoriesDropDownList(dish.Category.Id),
-            UnitList = await PopulateUnitsDropDownList(dish.Unit.Id)
+            UnitList = await PopulateUnitsDropDownList(dish.Unit.Id),
+            DishesProductsList = dish.DishesProducts,
+            Products = (List<Product>)await this._productService.GetAllAsync()
         };
 
         return View(dishViewModel);
@@ -116,12 +112,6 @@ public class DishController : Controller
     [HttpPost]
     public async Task<IActionResult> Edit(DishViewModel dishViewModel)
     {
-        if (!ModelState.IsValid)
-        {
-            PopulateCategoriesDropDownList();
-            PopulateUnitsDropDownList();
-            return View(dishViewModel);
-        }
 
         var dish = new Dish()
         {
@@ -137,8 +127,16 @@ public class DishController : Controller
             Sales = dishViewModel.Sales,
             Calories = dishViewModel.Calories,
             Image = dishViewModel.Image,
-            Description = dishViewModel.Description
+            Description = dishViewModel.Description,
+            DishesProducts = new List<DishesProducts>()
         };
+
+        foreach (var d in dishViewModel.DishesProductsList)
+        {
+            d.Product = await this._productService.GetOneAsync(d.ProductId);
+            d.ProductName = d.Product.Name;
+            dish.DishesProducts.Add(d);
+        }
         
         await this._dishService.UpdateAsync(dish);
         return RedirectToAction("Index");

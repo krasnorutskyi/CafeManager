@@ -27,8 +27,20 @@ public class DishRepository : IDishRepository
 
     public async Task UpdateAsync(Dish entity)
     {
-        this._table.Update(entity);
-        await this.SaveAsync();
+        var dishesProducts = await this._db.DishesProducts
+            .Where(d => d.DishId == entity.Id).ToListAsync();
+        this._db.DishesProducts.RemoveRange(dishesProducts);
+        try
+        {
+            this._table.Update(entity);
+            await this.SaveAsync();
+        }
+        catch(Exception ex)
+        {
+            throw (ex);
+            var a = 1;
+        }
+        
     }
 
     public async Task DeleteAsync(Dish entity)
