@@ -64,8 +64,6 @@ public class OrderController : Controller
                 product.Quantity -= p.ProductsAmount * d.DishesAmount;
                 await this._productService.UpdateAsync(product);
             }
-            d.Dish.Sales += d.DishesAmount;
-            await this._dishService.UpdateAsync(d.Dish);
             d.DishName = d.Dish.Name;
             d.DishesTotal = d.Dish.Price * d.DishesAmount;
             price += d.DishesTotal;
@@ -78,6 +76,16 @@ public class OrderController : Controller
         order.Price = (float)price;
         order.VAT = (float)(price * 0.2);
         await this._orderService.AddAsync(order);
+        // foreach (var o in order.DishesOrders)
+        // {
+        //     var dish = await this._dishService.GetOneAsync(o.DishId,
+        //         d=> d.DishesOrders,
+        //         d=> d.DishesProducts,
+        //         d=>d.Category,
+        //         d=>d.Unit);
+        //     dish.Sales += o.DishesAmount;
+        //     await this._dishService.UpdateAsync(dish);
+        // }
         return RedirectToAction("Index");
     }
 

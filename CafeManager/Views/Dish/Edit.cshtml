@@ -104,8 +104,7 @@ function change(element){
     </div>
     
     <div class="mb-3">
-        <label class="form-label">Sales</label>
-        <input asp-for="Sales" type="text" class="form-control" value="@Model.Sales"/>
+        <input asp-for="Sales" type="text" class="form-control" hidden value="@Model.Sales"/>
     </div>
     <div class="mb-3">
         <label class="form-label">Calories</label>

@@ -5,12 +5,16 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Created opportunity to add data to joining entity DishProduct. fixed bugs.">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Updated update for dish entity, including entity DishesProducts(many-to-many) relation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,17 +42,20 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Controllers/DishController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/14c2fb8fbba04f6e98cdc5e22e1dc9b9d57d7b9dde93cf2298dd17c9ba902/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a98896a49c4a516439161cc277f0b8bf2a80ccdd30e47a71d725f980fe8/Array.Enumerators.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cc477141a9a15fde3b7c58ecd2739d1a38ca92f945ec7c8b78e90193b11c5/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86d9944d7dc6247b332d77355bfabdb7cd68928cf33921b80ea70c795ef7c26/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8855814bf2f3271c785c183a7ab40132fc54ed4b5950c9d5fdcb2aa4b52/MethodBase.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ea828ecade990e734efaeed875732552144166cbef844dfca077e91b3e6e/ModelValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9156f7f7d7fe31ecb86103c74e89e22a5242a153d4ccf14e354685cb3fb7b5/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a1a59674744830c52bb8ec2c75c1a5b1b21ec7b871acd25d24a346472da73b/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a25d1d5ceaee2d4eedd09fbd27b44430e5c9bac768cb807ff9d235e0b2965830/InternalDbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aec8f52367c5a362193c977347c963ff857cd35a4345376c7a7f6ea6edbef8/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce719136c12653cd464ae0b247771f618b92f8beec14c1010b5278a7d0fd1f/DbContextServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d4f98ebdd878db4fbd98872756eb7be6ad9e468fe5cd6b16385d8c4993109a/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -137,7 +144,7 @@
       <workItem from="1672088914170" duration="12358000" />
       <workItem from="1672177639817" duration="47403000" />
       <workItem from="1672842214426" duration="40921000" />
-      <workItem from="1673282882543" duration="5630000" />
+      <workItem from="1673282882543" duration="12586000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -300,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673211840900</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updated update for dish entity, including entity DishesProducts(many-to-many) relation">
+      <created>1673303509239</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673303509239</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,39 +371,10 @@
     <MESSAGE value="Created CRUD views for Waiter Entity" />
     <MESSAGE value="Added eligible dishes to order on create stage" />
     <MESSAGE value="Created opportunity to add data to joining entity DishProduct. fixed bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created opportunity to add data to joining entity DishProduct. fixed bugs." />
+    <MESSAGE value="Updated update for dish entity, including entity DishesProducts(many-to-many) relation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated update for dish entity, including entity DishesProducts(many-to-many) relation" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs</url>
-          <line>56</line>
-          <properties documentPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" initialLine="56" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="1895" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1945" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs</url>
-          <line>40</line>
-          <properties documentPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" initialLine="36" containingFunctionPresentation="method 'UpdateAsync'">
-            <startOffsets>
-              <option value="1094" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1104" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CafeManager.Core.Entities.EntityBase" memberName="Id" />

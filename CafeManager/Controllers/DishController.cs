@@ -63,7 +63,7 @@ public class DishController : Controller
             Volume = dishViewModel.Volume,
             Unit = await this._unitService.GetOneAsync(dishViewModel.UnitId),
             UnitId = dishViewModel.UnitId,
-            Sales = dishViewModel.Sales,
+            Sales = 0,
             Calories = dishViewModel.Calories,
             Image = dishViewModel.Image,
             Description = dishViewModel.Description,

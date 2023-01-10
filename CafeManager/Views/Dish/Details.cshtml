@@ -13,6 +13,16 @@
     <img src = "@Model.Image" width="500px"/>
 </div>
 <div>
+    <h1>@Model.Name</h1>
+    <h4>Complexity(from 1 to 5) - @Model.Complexity</h4>
+    <h4>Category - @Model.Category.Name</h4>
+    <h4>Price - @Model.Price</h4>
+    <h4>@Model.Volume @Model.Unit.Name</h4>
+    <h4>Nutrirional value - @Model.Calories cal.</h4>
+    <h4>Sales - @Model.Sales</h4>
+    <h4>@Model.Description</h4>
+</div>
+<div>
     @{
             Html.RenderPartial("_DishesProducts", Model.DishesProducts);
         }
