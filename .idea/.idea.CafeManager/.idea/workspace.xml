@@ -5,28 +5,9 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="minor fixes">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="minor fixes, changed relations between Waiter and Table entities">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/CafeManager.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/ITableService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/ITableService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/CafeManager.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Core/Entities/Table.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/CafeManager.Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DataInitializer/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/TableService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/TableService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/CafeManager.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/TableController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/TableController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/ViewModels/OrderViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/ViewModels/OrderViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/ViewModels/TableViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/ViewModels/TableViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Table/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Table/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Table/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Table/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Table/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Table/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +137,7 @@
       <workItem from="1672088914170" duration="12358000" />
       <workItem from="1672177639817" duration="47403000" />
       <workItem from="1672842214426" duration="40921000" />
-      <workItem from="1673282882543" duration="16840000" />
+      <workItem from="1673282882543" duration="19742000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -333,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673361498121</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="minor fixes, changed relations between Waiter and Table entities">
+      <created>1673460489388</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673460489389</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +355,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Created all entities, including joining tables entities" />
     <MESSAGE value="Created Application layer, created interface of generic repository." />
     <MESSAGE value="Added paging" />
     <MESSAGE value="Created abstractions for entities services" />
@@ -392,7 +379,8 @@
     <MESSAGE value="Created opportunity to add data to joining entity DishProduct. fixed bugs." />
     <MESSAGE value="Updated update for dish entity, including entity DishesProducts(many-to-many) relation" />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="minor fixes, changed relations between Waiter and Table entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes, changed relations between Waiter and Table entities" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
