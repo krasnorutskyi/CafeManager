@@ -1,0 +1,14 @@
+@model CafeManager.Application.Paging.PagedList<CafeManager.Core.StatisticsModels.TableStatisticsModel>
+
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<h1>Tables</h1>
+@foreach (var t in @Model)
+{
+    <h2>@t.TableId</h2>
+    <h2>@t.OrdersCount</h2>
+}

@@ -8,7 +8,7 @@ public interface IStatisticsService
 {
     Task<PagedList<Dish>> GetDishesStatisticsAsync(PageParameters pageParameters);
 
-    Task<DateTime> GetBusiestDayStatisticsAsync();
+    Task<DateTime> GetLeastBusyDayStatisticsAsync();
 
     Task<PagedList<WaiterStatisticsModel>> GetWaitersStatisticsAsync(PageParameters pageParameters);
 

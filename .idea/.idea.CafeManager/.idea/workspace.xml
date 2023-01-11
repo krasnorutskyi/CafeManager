@@ -5,9 +5,12 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="minor fixes, changed relations between Waiter and Table entities">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Implemented 4 statistics, created statistics model, configured services in DependencyInjection.cs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IStatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IStatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/StatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Shared/_Layout.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,7 @@
       <workItem from="1672088914170" duration="12358000" />
       <workItem from="1672177639817" duration="47403000" />
       <workItem from="1672842214426" duration="40921000" />
-      <workItem from="1673282882543" duration="19742000" />
+      <workItem from="1673282882543" duration="26054000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -321,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673460489389</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implemented 4 statistics, created statistics model, configured services in DependencyInjection.cs">
+      <created>1673468343268</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1673468343268</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +365,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Created Application layer, created interface of generic repository." />
     <MESSAGE value="Added paging" />
     <MESSAGE value="Created abstractions for entities services" />
     <MESSAGE value="Created and filled Application context file" />
@@ -380,9 +389,27 @@
     <MESSAGE value="Updated update for dish entity, including entity DishesProducts(many-to-many) relation" />
     <MESSAGE value="minor fixes" />
     <MESSAGE value="minor fixes, changed relations between Waiter and Table entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes, changed relations between Waiter and Table entities" />
+    <MESSAGE value="Implemented 4 statistics, created statistics model, configured services in DependencyInjection.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented 4 statistics, created statistics model, configured services in DependencyInjection.cs" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs</url>
+          <line>136</line>
+          <properties documentPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs" initialLine="136" containingFunctionPresentation="method 'GetTablesStatisticsAsync'">
+            <startOffsets>
+              <option value="5383" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5429" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CafeManager.Core.Entities.EntityBase" memberName="Id" />

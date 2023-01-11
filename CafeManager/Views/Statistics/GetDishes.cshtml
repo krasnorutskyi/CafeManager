@@ -1,0 +1,49 @@
+@model CafeManager.Application.Paging.PagedList<CafeManager.Core.Entities.Dish>
+
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<h1>The most popular dishes</h1>
+
+@foreach (var d in Model)
+{
+    <div>
+        <img src = "@d.Image" width="500px"/>
+    </div>
+    <div>
+        <h1>@d.Name</h1>
+        <h4>Complexity(from 1 to 5) - @d.Complexity</h4>
+        <h4>Category - @d.Category.Name</h4>
+        <h4>Price - @d.Price</h4>
+        <h4>@d.Volume @d.Unit.Name</h4>
+        <h4>Nutritional value - @d.Calories cal.</h4>
+        <h4>Sales - @d.Sales</h4>
+        <h4>@d.Description</h4>
+    </div>
+}
+
+@{
+    var previousPage = (Model.HasPreviousPage) ? "" : "disabled";
+    var nextPage = (Model.HasNextPage) ? "" : "disabled";
+}
+
+<nav class=mt-4>
+    <ul class="pagination justify-content-center">
+        <li class="page-item @previousPage">
+            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber - 1)" class="page-link">Previous</a>
+        </li>
+        @for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            string linkStatus = (i == Model.PageNumber) ? "active" : "";
+            <li class="page-item @linkStatus">
+                <a asp-action="Index" asp-route-PageNumber="@i" class="page-link">@i</a>
+            </li>
+        }
+        <li class="page-item @nextPage">
+            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber + 1)" class="page-link">Next</a>
+        </li>
+    </ul>
+</nav>

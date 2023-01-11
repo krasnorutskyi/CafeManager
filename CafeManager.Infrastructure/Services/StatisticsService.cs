@@ -9,19 +9,30 @@ namespace CafeManager.Infrastructure.Services;
 public class StatisticsService : IStatisticsService
 {
     private readonly IStatisticsRepository _statisticsRepository;
+    private readonly IUnitService _unitService;
+    private readonly ICategoryService _categoryService;
 
-    public StatisticsService(IStatisticsRepository statisticsRepository)
+    public StatisticsService(IStatisticsRepository statisticsRepository, IUnitService unitService, ICategoryService categoryService)
     {
         this._statisticsRepository = statisticsRepository;
+        this._unitService = unitService;
+        this._categoryService = categoryService;
     }
     
     public async Task<PagedList<Dish>> GetDishesStatisticsAsync(PageParameters pageParameters)
     {
         pageParameters.PageSize = 1;
-        return await this._statisticsRepository.GetDishesStatisticsAsync(pageParameters);
+        var dishes =  await this._statisticsRepository.GetDishesStatisticsAsync(pageParameters);
+        foreach (var d in dishes)
+        {
+            d.Category = await this._categoryService.GetOneAsync(d.CategoryId);
+            d.Unit = await this._unitService.GetOneAsync(d.UnitId);
+        }
+
+        return dishes;
     }
 
-    public async Task<DateTime> GetBusiestDayStatisticsAsync()
+    public async Task<DateTime> GetLeastBusyDayStatisticsAsync()
     {
         return await this._statisticsRepository.GetBusiestDayStatisticsAsync();
     }
