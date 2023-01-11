@@ -16,6 +16,11 @@
         @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Waiter", new {@class = "form-control"})
         @Html.ValidationMessageFor(m => m.WaiterId)
     </div>
+    <div class="mb-3">
+            <label class="form-label">Table</label>
+            @Html.DropDownListFor(model => model.TableId, Model.TableList, "Select Table", new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.TableId)
+        </div>
 
     <div class="mb-3">
         <label class="form-label">Has Client's Sale</label>

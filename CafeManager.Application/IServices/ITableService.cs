@@ -15,6 +15,7 @@ public interface ITableService
     Task<Table> GetOneAsync(int id);
     
     Task<Table> GetOneAsync(int id, params Expression<Func<Table, object>>[] includeProperties);
+    Task<IEnumerable<Table>> GetAllAsync();
     
     Task<PagedList<Table>> GetPageAsync(PageParameters pageParameters);
     

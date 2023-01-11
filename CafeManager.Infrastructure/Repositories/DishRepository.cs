@@ -31,10 +31,10 @@ public class DishRepository : IDishRepository
             .Where(d => d.DishId == entity.Id).ToListAsync();
         this._db.DishesProducts.RemoveRange(dishesProducts);
         var lastOrder = this._db.DishesOrders.OrderByDescending(o=>o.OrdersNumber).Take(1).FirstOrDefault();
-        // var dishesOrders = await this._db.DishesOrders
-        //     .Where(d => d.DishId == entity.Id && d.OrdersNumber == lastOrder.OrdersNumber)
-        //     .ToListAsync();
-        // this._db.DishesOrders.RemoveRange(dishesOrders);
+        var dishesOrders = await this._db.DishesOrders
+            .Where(d => d.DishId == entity.Id && d.OrdersNumber == lastOrder.OrdersNumber)
+            .ToListAsync();
+        this._db.DishesOrders.RemoveRange(dishesOrders);
         try
         {
             this._table.Update(entity);

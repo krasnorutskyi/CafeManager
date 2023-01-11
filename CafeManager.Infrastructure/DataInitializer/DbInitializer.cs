@@ -176,23 +176,23 @@ public class DbInitializer
         
         var tables = new List<Table>()
         {
-            new Table() {PlacesNumber = 2, Waiter = waiters[0]},
-            new Table() {PlacesNumber = 2, Waiter = waiters[1]},
-            new Table() {PlacesNumber = 2, Waiter = waiters[2]},
-            new Table() {PlacesNumber = 4, Waiter = waiters[3]},
-            new Table() {PlacesNumber = 4, Waiter = waiters[4]},
-            new Table() {PlacesNumber = 5, Waiter = waiters[0]},
-            new Table() {PlacesNumber = 5, Waiter = waiters[1]},
-            new Table() {PlacesNumber = 3, Waiter = waiters[2]},
-            new Table() {PlacesNumber = 3, Waiter = waiters[3]},
-            new Table() {PlacesNumber = 3, Waiter = waiters[4]},
-            new Table() {PlacesNumber = 3, Waiter = waiters[0]},
-            new Table() {PlacesNumber = 6, Waiter = waiters[1]},
-            new Table() {PlacesNumber = 7, Waiter = waiters[2]},
-            new Table() {PlacesNumber = 7, Waiter = waiters[2]},
-            new Table() {PlacesNumber = 5, Waiter = waiters[3]},
-            new Table() {PlacesNumber = 5, Waiter = waiters[3]},
-            new Table() {PlacesNumber = 4, Waiter = waiters[4]}
+            new Table() {PlacesNumber = 2},
+            new Table() {PlacesNumber = 2},
+            new Table() {PlacesNumber = 2},
+            new Table() {PlacesNumber = 4},
+            new Table() {PlacesNumber = 4},
+            new Table() {PlacesNumber = 5},
+            new Table() {PlacesNumber = 5},
+            new Table() {PlacesNumber = 3},
+            new Table() {PlacesNumber = 3},
+            new Table() {PlacesNumber = 3},
+            new Table() {PlacesNumber = 3},
+            new Table() {PlacesNumber = 6},
+            new Table() {PlacesNumber = 7},
+            new Table() {PlacesNumber = 7},
+            new Table() {PlacesNumber = 5},
+            new Table() {PlacesNumber = 5},
+            new Table() {PlacesNumber = 4}
         };
 
         foreach (var table in tables)
@@ -201,11 +201,7 @@ public class DbInitializer
         }
 
         context.SaveChanges();
-
-
-        var o1 = new Order()
-            {Date = DateTime.Today, Waiter = w1, Price = 100, Tipp = 20, HasClientsSale = true, VAT = 20};
-
+        
 
     }
 }

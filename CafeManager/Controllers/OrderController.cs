@@ -13,13 +13,15 @@ public class OrderController : Controller
     private readonly IWaiterService _waiterService;
     private readonly IDishService _dishService;
     private readonly IProductService _productService;
+    private readonly ITableService _tableService;
 
-    public OrderController(IOrderService orderService, IWaiterService waiterService, IDishService dishService, IProductService productService)
+    public OrderController(IOrderService orderService, IWaiterService waiterService, IDishService dishService, IProductService productService, ITableService tableService)
     {
         this._orderService = orderService;
         this._waiterService = waiterService;
         this._dishService = dishService;
         this._productService = productService;
+        this._tableService = tableService;
     }
     // GET
     public async Task<IActionResult> Index(PageParameters pageParameters)
@@ -36,6 +38,7 @@ public class OrderController : Controller
         var orderViewModel = new OrderViewModel();
         orderViewModel.WaiterList = await this.PopulateWaitersDropDownList();
         orderViewModel.Dishes = (List<Dish>) await this._dishService.GetAllAsync();
+        orderViewModel.TableList = await this.PopulateTablesDropDownList();
         return View(orderViewModel);
     }
     
@@ -51,6 +54,8 @@ public class OrderController : Controller
             HasClientsSale = orderViewModel.HasClientsSale,
             WaiterId = orderViewModel.WaiterId,
             Waiter = await this._waiterService.GetOneAsync(orderViewModel.WaiterId),
+            TableId = orderViewModel.TableId,
+            Table = await this._tableService.GetOneAsync(orderViewModel.TableId),
             DishesOrders = new List<DishesOrders>()
         };
         var price = 0.0;
@@ -76,22 +81,22 @@ public class OrderController : Controller
         order.Price = (float)price;
         order.VAT = (float)(price * 0.2);
         await this._orderService.AddAsync(order);
-        // foreach (var o in order.DishesOrders)
-        // {
-        //     var dish = await this._dishService.GetOneAsync(o.DishId,
-        //         d=> d.DishesOrders,
-        //         d=> d.DishesProducts,
-        //         d=>d.Category,
-        //         d=>d.Unit);
-        //     dish.Sales += o.DishesAmount;
-        //     await this._dishService.UpdateAsync(dish);
-        // }
+        foreach (var o in order.DishesOrders)
+        {
+            var dish = await this._dishService.GetOneAsync(o.DishId,
+                d=> d.DishesOrders,
+                d=> d.DishesProducts,
+                d=>d.Category,
+                d=>d.Unit);
+            dish.Sales += o.DishesAmount;
+            await this._dishService.UpdateAsync(dish);
+        }
         return RedirectToAction("Index");
     }
 
     public async Task<IActionResult> Details(int id)
     {
-        var order = await this._orderService.GetOneAsync(id, o=> o.Waiter, o => o.DishesOrders);
+        var order = await this._orderService.GetOneAsync(id, o=> o.Waiter, o => o.DishesOrders, o=> o.Table);
         return View(order);
     }
     
@@ -100,6 +105,12 @@ public class OrderController : Controller
     {
         var waiters = await this._waiterService.GetAllAsync();
         return new SelectList(waiters, "Id", "LastName", selectedWaiter);
+    }
+    
+    private async Task<IEnumerable<SelectListItem>> PopulateTablesDropDownList(object selectedTable = null)
+    {
+        var tables = await this._tableService.GetAllAsync();
+        return new SelectList(tables, "Id", "Id", selectedTable);
     }
     
     // GET

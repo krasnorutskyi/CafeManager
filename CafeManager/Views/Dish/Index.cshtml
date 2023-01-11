@@ -16,10 +16,10 @@
         
         @foreach (var d in Model)
         {
-            <div class="col-4">
-                <img src="@d.Image" style="object-fit: cover" class="w-100 h-100"/>
+            <div class="col-4 align-content-center">
+                <img src="@d.Image" style="object-fit: cover" class="w-100 h-75"/>
                 <h3>@d.Name, @d.Price.ToString()</h3>
-                <div class="btn-group" role="group" aria-label="Basic example">
+                <div class="btn-group" role="group" class="h-25" aria-label="Basic example">
                   <a href="/Dish/Edit/@d.Id.ToString()" type="button" class="btn btn-outline-secondary">Edit</a>
                   <a href="/Dish/DeleteDish/@d.Id.ToString()" type="button" class="btn btn-outline-secondary">Delete</a>
                   <a href="/Dish/Details/@d.Id.ToString()" type="button" class="btn btn-outline-secondary">Details</a>

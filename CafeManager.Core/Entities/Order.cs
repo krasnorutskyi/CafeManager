@@ -8,6 +8,8 @@ public class Order : EntityBase
     public bool HasClientsSale { get; set; }
     public float VAT { get; set; }
     public int WaiterId { get; set; }
+    public int TableId { get; set; }
+    public Table Table { get; set; }
     public Waiter Waiter { get; set; }
     public List<DishesOrders> DishesOrders { get; set; }
 }

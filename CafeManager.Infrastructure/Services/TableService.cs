@@ -31,6 +31,11 @@ public class TableService : ITableService
     {
         await this._tableRepository.DeleteAsync(table);
     }
+    
+    public async Task<IEnumerable<Table>> GetAllAsync()
+    {
+        return await this._tableRepository.GetAllAsync();
+    }
 
     public async Task<Table> GetOneAsync(int id)
     {

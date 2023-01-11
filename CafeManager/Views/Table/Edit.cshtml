@@ -15,11 +15,6 @@
         <input asp-for="PlacesNumber" type="number" class="form-control" min="1" value = "@Model.PlacesNumber"/>
     </div>
     <div class="mb-3">
-        @Html.LabelFor(m => m.WaiterId)
-        @Html.DropDownListFor(model => model.WaiterId, Model.WaiterList, "Select Waiter", new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.WaiterId)
-    </div>
-    <div class="mb-3">
         <button type="submit" class="btn btn-primary">
             <h3>Submit</h3>
         </button>
