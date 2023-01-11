@@ -13,13 +13,15 @@ public class DishController : Controller
     private readonly ICategoryService _categoryService;
     private readonly IUnitService _unitService;
     private readonly IProductService _productService;
+    private readonly IOrderService _orderService;
     
-    public DishController(IDishService dishService, ICategoryService categoryService, IUnitService unitService, IProductService productService)
+    public DishController(IDishService dishService,IOrderService orderService, ICategoryService categoryService, IUnitService unitService, IProductService productService)
     {
         this._dishService = dishService;
         this._categoryService = categoryService;
         this._unitService = unitService;
         this._productService = productService;
+        this._orderService = orderService;
     }
 
     // GET
@@ -85,7 +87,7 @@ public class DishController : Controller
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
-        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit, d => d.DishesProducts);
+        var dish = await this._dishService.GetOneAsync(id, d => d.Category, d => d.Unit, d => d.DishesProducts, d=> d.DishesOrders);
         var dishViewModel = new DishViewModel
         {
             //Id = id,
@@ -102,6 +104,7 @@ public class DishController : Controller
             CategoryList = await PopulateCategoriesDropDownList(dish.Category.Id),
             UnitList = await PopulateUnitsDropDownList(dish.Unit.Id),
             DishesProductsList = dish.DishesProducts,
+            DishesOrdersList = dish.DishesOrders,
             Products = (List<Product>)await this._productService.GetAllAsync()
         };
 
@@ -128,6 +131,7 @@ public class DishController : Controller
             Calories = dishViewModel.Calories,
             Image = dishViewModel.Image,
             Description = dishViewModel.Description,
+            DishesOrders = new List<DishesOrders>(),
             DishesProducts = new List<DishesProducts>()
         };
 
@@ -136,6 +140,12 @@ public class DishController : Controller
             d.Product = await this._productService.GetOneAsync(d.ProductId);
             d.ProductName = d.Product.Name;
             dish.DishesProducts.Add(d);
+        }
+
+        foreach (var d in dishViewModel.DishesOrdersList)
+        {
+            d.Order = await this._orderService.GetOneAsync(d.OrdersNumber);
+            dish.DishesOrders.Add(d);
         }
         
         await this._dishService.UpdateAsync(dish);

@@ -80,17 +80,15 @@ public class OrderController : Controller
         }
         order.Price = (float)price;
         order.VAT = (float)(price * 0.2);
-        await this._orderService.AddAsync(order);
+        
         foreach (var o in order.DishesOrders)
         {
-            var dish = await this._dishService.GetOneAsync(o.DishId,
-                d=> d.DishesOrders,
-                d=> d.DishesProducts,
-                d=>d.Category,
-                d=>d.Unit);
+            var dish = await this._dishService.GetOneAsync(o.DishId);
             dish.Sales += o.DishesAmount;
-            await this._dishService.UpdateAsync(dish);
+            await this._dishService.UpdateSaleAsync(dish);
         }
+        
+        await this._orderService.AddAsync(order);
         return RedirectToAction("Index");
     }
 

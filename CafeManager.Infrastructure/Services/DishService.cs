@@ -22,6 +22,11 @@ public class DishService : IDishService
         await this._dishRepository.AddAsync(dish);
     }
 
+    public async Task UpdateSaleAsync(Dish entity)
+    {
+        await this._dishRepository.UpdateSaleAsync(entity);
+    }
+
     public async Task UpdateAsync(Dish dish)
     {
         

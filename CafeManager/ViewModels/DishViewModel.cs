@@ -19,6 +19,7 @@ public class DishViewModel
     
     public List<Product> Products { get; set; }
     public List<DishesProducts> DishesProductsList { get; set; }
+    public List<DishesOrders> DishesOrdersList { get; set; }
 
     public IEnumerable<SelectListItem> CategoryList { get; set; }
     public IEnumerable<SelectListItem> UnitList { get; set; }

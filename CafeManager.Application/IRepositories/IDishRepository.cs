@@ -9,6 +9,7 @@ public interface IDishRepository
     Task AddAsync(Dish entity);
 
     Task UpdateAsync(Dish entity);
+    Task UpdateSaleAsync(Dish entity);
 
     Task DeleteAsync(Dish entity);
 

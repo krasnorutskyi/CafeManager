@@ -25,16 +25,22 @@ public class DishRepository : IDishRepository
         await this.SaveAsync();
     }
 
+    public async Task UpdateSaleAsync(Dish entity)
+    {
+        this._db.Entry(entity).Property(x => x.Sales).IsModified = true;
+        await this.SaveAsync();
+    }
+
     public async Task UpdateAsync(Dish entity)
     {
         var dishesProducts = await this._db.DishesProducts
             .Where(d => d.DishId == entity.Id).ToListAsync();
         this._db.DishesProducts.RemoveRange(dishesProducts);
-        var lastOrder = this._db.DishesOrders.OrderByDescending(o=>o.OrdersNumber).Take(1).FirstOrDefault();
-        var dishesOrders = await this._db.DishesOrders
-            .Where(d => d.DishId == entity.Id && d.OrdersNumber == lastOrder.OrdersNumber)
-            .ToListAsync();
-        this._db.DishesOrders.RemoveRange(dishesOrders);
+        // var lastOrder = this._db.DishesOrders.OrderByDescending(o=>o.OrdersNumber).Take(1).FirstOrDefault();
+        // var dishesOrders = await this._db.DishesOrders
+        //     .Where(d => d.DishId == entity.Id && d.OrdersNumber == lastOrder.OrdersNumber)
+        //     .ToListAsync();
+        // this._db.DishesOrders.RemoveRange(dishesOrders);
         try
         {
             this._table.Update(entity);

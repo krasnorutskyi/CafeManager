@@ -38,7 +38,6 @@ public class StatisticsRepository : IStatisticsRepository
             command.Parameters.Add(new SqlParameter("@pageSize", pageParameters.PageSize));
             
             await this._db.Database.OpenConnectionAsync();
-            json.Append('}');
             using (var reader = await command.ExecuteReaderAsync())
             {
                 while (await reader.ReadAsync())

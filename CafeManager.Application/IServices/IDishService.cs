@@ -10,6 +10,8 @@ public interface IDishService
     
     Task UpdateAsync(Dish dish);
     
+    Task UpdateSaleAsync(Dish entity);
+    
     Task DeleteAsync(Dish dish);
     
     Task<Dish> GetOneAsync(int id);
