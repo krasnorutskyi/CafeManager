@@ -26,14 +26,16 @@ public class DishService : IDishService
         await this._dishRepository.UpdateSaleAsync(entity);
     }
 
-    public async Task<Dish> GetDishOfTheDay()
+    public async Task<List<Dish>> GetDishOfTheDay()
     {
-        var dishs = await this._dishRepository.GetAllAsync();
-        var dishes = dishs.OrderBy(d => d.Sales).OrderBy(d=>d.Complexity).ToList();
+        var dish = await this._dishRepository.GetAllWithRelatedAsync();
+        var dishes = dish.OrderBy(d => d.Sales).OrderBy(d=>d.Complexity).ToList();
         var n = 20; // number of expected dishes
+        var appropriateDishes = new List<Dish>();
         foreach (var d in dishes)
         {
             var price = 0.0;
+            var isPossible = true;
             foreach (var p in d.DishesProducts)
             {
                 if (p.ProductsAmount * 20 < p.Product.Quantity * 0.4)
@@ -42,16 +44,22 @@ public class DishService : IDishService
                 }
                 else
                 {
-                    dishes.Remove(d);
+                    isPossible = false;
+                    break;
                 }
             }
 
-            d.Price = (float)price;
+            if (isPossible)
+            {
+                d.Price = (float)price;
+                appropriateDishes.Add(d);
+            }
+            
         }
 
-        dishes = dishes.OrderBy(d => d.Price).ToList();
+        appropriateDishes = appropriateDishes.OrderBy(d => d.Price).ToList();
         
-        return dishes.First();
+        return appropriateDishes;
     }
     
     public async Task UpdateAsync(Dish dish)

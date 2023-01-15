@@ -109,6 +109,28 @@ public class DishRepository : IDishRepository
 
         return await query.ToListAsync<Dish>();
     }
+    
+    public async Task<IEnumerable<Dish>> GetAllAsync(params Expression<Func<Dish, object>>[] includeProperties)
+    {
+        var query = this._table.AsNoTracking();
+        foreach (var property in includeProperties)
+        {
+            query = query.Include(property);
+        }
+
+        return await query.ToListAsync<Dish>();
+    }
+    
+    public async Task<IEnumerable<Dish>> GetAllWithRelatedAsync()
+    {
+        var dishes = await this._table.AsNoTracking()
+            .Include(dish=>dish.Category)
+            .Include(dish=>dish.Unit)
+            .Include(dish=>dish.DishesProducts)
+            .ThenInclude(dishesProducts => dishesProducts.Product).ToListAsync();
+
+        return dishes;
+    }
 
     public async Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters)
     {

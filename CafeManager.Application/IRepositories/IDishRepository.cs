@@ -22,9 +22,13 @@ public interface IDishRepository
     Task<Dish> GetOneAsync(int id, params Expression<Func<Dish, object>>[] includeProperties);
     
     Task<IEnumerable<Dish>> GetAllAsync();
+    
+    Task<IEnumerable<Dish>> GetAllAsync(params Expression<Func<Dish, object>>[] includeProperties);
 
     Task<IEnumerable<Dish>> GetAllAsync(Expression<Func<Dish, bool>> predicate,
         params Expression<Func<Dish, object>>[] includeProperties);
+
+    Task<IEnumerable<Dish>> GetAllWithRelatedAsync();
 
     Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters);
 

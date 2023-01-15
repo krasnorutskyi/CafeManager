@@ -1,4 +1,5 @@
-@model CafeManager.Core.Entities.Dish
+@using Microsoft.IdentityModel.Tokens
+@model List<CafeManager.Core.Entities.Dish>
 
 @{
     
@@ -7,23 +8,33 @@
 
 
 <div class="align-content-center">
-    <h1> Dish of The Day</h1>
+    <h1 class="mb-3"> Dish of The Day</h1>
 </div>
-<div>
-    <img src = "@Model.Image" width="500px"/>
-</div>
-<div>
-    <h1>@Model.Name</h1>
-    <h4>Complexity(from 1 to 5) - @Model.Complexity</h4>
-    <h4>Category - @Model.Category.Name</h4>
-    <h4>Price of ingredients - @Model.Price</h4>
-    <h4>@Model.Volume @Model.Unit.Name</h4>
-    <h4>Nutritional value - @Model.Calories cal.</h4>
-    <h4>Sales - @Model.Sales</h4>
-    <h4>@Model.Description</h4>
-</div>
-<div>
-    @{
-        Html.RenderPartial("_DishesProducts", Model.DishesProducts);
+@if(Model.IsNullOrEmpty()){
+    <h4>Unfortunately there is no opportunity to make Special Offers</h4>
+}
+else
+{
+    foreach (var d in Model)
+    {
+        <div>
+            <img src = "@d.Image" width="500px"/>
+        </div>
+        <div>
+            <h1>@d.Name</h1>
+            <h4>Complexity(from 1 to 5) - @d.Complexity</h4>
+            <h4>Category - @d.Category.Name</h4>
+            <h4>Price of ingredients - @d.Price</h4>
+            <h4>@d.Volume @d.Unit.Name</h4>
+            <h4>Nutritional value - @d.Calories cal.</h4>
+            <h4>Sales - @d.Sales</h4>
+            <h4>@d.Description</h4>
+        </div>
+        <div class="mb-3">
+            @{
+                Html.RenderPartial("_DishesProducts", d.DishesProducts);
+            }
+        </div>
     }
-</div>
+    
+}

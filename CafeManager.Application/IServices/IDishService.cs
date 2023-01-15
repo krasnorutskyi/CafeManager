@@ -14,7 +14,7 @@ public interface IDishService
     
     Task DeleteAsync(Dish dish);
 
-    Task<Dish> GetDishOfTheDay();
+    Task<List<Dish>> GetDishOfTheDay();
 
     Task<Dish> GetOneAsync(int id);
     Task<Dish> GetDishWithRelatedAsync(int id);

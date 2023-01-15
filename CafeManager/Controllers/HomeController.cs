@@ -9,11 +9,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IOrderService _orderService;
+    private readonly IDishService _dishService;
 
-    public HomeController(ILogger<HomeController> logger, IOrderService orderService)
+    public HomeController(ILogger<HomeController> logger, IOrderService orderService, IDishService dishService)
     {
         _logger = logger;
         this._orderService = orderService;
+        this._dishService = dishService;
     }
 
     public IActionResult Index()
@@ -21,10 +23,10 @@ public class HomeController : Controller
         return View();
     }
     
-    public IActionResult GetDish()
+    public async Task<IActionResult> GetDish()
     {
-        
-        return View();
+        var dishes = await this._dishService.GetDishOfTheDay();
+        return View(dishes);
     }
     
     [HttpGet]
