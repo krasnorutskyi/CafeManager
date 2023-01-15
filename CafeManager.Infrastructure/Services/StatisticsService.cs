@@ -21,7 +21,7 @@ public class StatisticsService : IStatisticsService
     
     public async Task<PagedList<Dish>> GetDishesStatisticsAsync(PageParameters pageParameters)
     {
-        pageParameters.PageSize = 1;
+
         var dishes =  await this._statisticsRepository.GetDishesStatisticsAsync(pageParameters);
         foreach (var d in dishes)
         {

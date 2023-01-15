@@ -3,7 +3,6 @@ using CafeManager.Application.IRepositories;
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
-using CafeManager.Infrastructure.Repositories;
 
 namespace CafeManager.Infrastructure.Services;
 
@@ -27,6 +26,34 @@ public class DishService : IDishService
         await this._dishRepository.UpdateSaleAsync(entity);
     }
 
+    public async Task<Dish> GetDishOfTheDay()
+    {
+        var dishs = await this._dishRepository.GetAllAsync();
+        var dishes = dishs.OrderBy(d => d.Sales).OrderBy(d=>d.Complexity).ToList();
+        var n = 20; // number of expected dishes
+        foreach (var d in dishes)
+        {
+            var price = 0.0;
+            foreach (var p in d.DishesProducts)
+            {
+                if (p.ProductsAmount * 20 < p.Product.Quantity * 0.4)
+                {
+                    price += p.Product.Price * p.ProductsAmount;
+                }
+                else
+                {
+                    dishes.Remove(d);
+                }
+            }
+
+            d.Price = (float)price;
+        }
+
+        dishes = dishes.OrderBy(d => d.Price).ToList();
+        
+        return dishes.First();
+    }
+    
     public async Task UpdateAsync(Dish dish)
     {
         

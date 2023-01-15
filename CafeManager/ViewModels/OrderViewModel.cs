@@ -15,4 +15,6 @@ public class OrderViewModel
     public List<DishesOrders> DishesOrdersList{ get; set; }
     public IEnumerable<SelectListItem> WaiterList { get; set; }
     public IEnumerable<SelectListItem> TableList { get; set; }
+
+    public string DishException { get; set; } 
 }

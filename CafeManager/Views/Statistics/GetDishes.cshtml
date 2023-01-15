@@ -21,29 +21,7 @@
         <h4>@d.Volume @d.Unit.Name</h4>
         <h4>Nutritional value - @d.Calories cal.</h4>
         <h4>Sales - @d.Sales</h4>
-        <h4>@d.Description</h4>
+        <h4 class="mb-2">@d.Description</h4>
     </div>
+    <br/><br/>
 }
-
-@{
-    var previousPage = (Model.HasPreviousPage) ? "" : "disabled";
-    var nextPage = (Model.HasNextPage) ? "" : "disabled";
-}
-
-<nav class=mt-4>
-    <ul class="pagination justify-content-center">
-        <li class="page-item @previousPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber - 1)" class="page-link">Previous</a>
-        </li>
-        @for (var i = 1; i <= Model.TotalPages; i++)
-        {
-            string linkStatus = (i == Model.PageNumber) ? "active" : "";
-            <li class="page-item @linkStatus">
-                <a asp-action="Index" asp-route-PageNumber="@i" class="page-link">@i</a>
-            </li>
-        }
-        <li class="page-item @nextPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber + 1)" class="page-link">Next</a>
-        </li>
-    </ul>
-</nav>

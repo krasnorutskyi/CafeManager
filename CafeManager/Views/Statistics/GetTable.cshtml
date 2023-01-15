@@ -7,8 +7,17 @@
 <!DOCTYPE html>
 
 <h1>Tables</h1>
-@foreach (var t in @Model)
-{
-    <h2>@t.TableId</h2>
-    <h2>@t.OrdersCount</h2>
-}
+<table class="table table-bordered table-responsive table-hover border border-0 border-dark">
+    <tr>
+        <th>Table Number</th>
+        <th>Orders Number</th>
+    </tr>
+    @foreach (var t in Model)
+    {
+        <tr>
+            <td>@t.TableId </td>
+            <td>@t.OrdersCount </td>
+        </tr>
+    }
+
+</table>

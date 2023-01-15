@@ -13,7 +13,9 @@ public interface IDishService
     Task UpdateSaleAsync(Dish entity);
     
     Task DeleteAsync(Dish dish);
-    
+
+    Task<Dish> GetDishOfTheDay();
+
     Task<Dish> GetOneAsync(int id);
     Task<Dish> GetDishWithRelatedAsync(int id);
     

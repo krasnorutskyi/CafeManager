@@ -73,6 +73,8 @@ public class DishRepository : IDishRepository
     public async Task<Dish> GetDishWithRelatedAsync(int id)
     {
         var dish = this._table.Where(entity => entity.Id == id)
+            .Include(dish=>dish.Category)
+            .Include(dish=>dish.Unit)
             .Include(dish=>dish.DishesProducts)
             .ThenInclude(dishesProducts => dishesProducts.Product);
 

@@ -4,15 +4,19 @@
     
 }
 
-<!DOCTYPE html>
+<h1>Waiters</h1>
+<br/>
+<table class="table table-bordered table-responsive table-hover border border-0 border-dark">
+    <tr>
+        <th>Name</th>
+        <th>Clients Number</th>
+    </tr>
+    @foreach (var t in Model)
+    {
+        <tr>
+            <td>@t.FirstName @t.LastName </td>
+            <td>@t.OrdersCount </td>
+        </tr>
+    }
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
-</div>
-</body>
-</html>
+</table>

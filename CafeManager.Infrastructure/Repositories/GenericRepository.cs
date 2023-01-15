@@ -17,7 +17,7 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         this._db = context;
         this._table = _db.Set<TEntity>();
     }
-
+    
 
     public async Task AddAsync(TEntity entity)
     {

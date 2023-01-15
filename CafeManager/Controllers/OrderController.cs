@@ -59,6 +59,7 @@ public class OrderController : Controller
             DishesOrders = new List<DishesOrders>()
         };
         var price = 0.0;
+        bool isEnough = true;
         foreach (var d in orderViewModel.DishesOrdersList)
         {
             d.Dish = await this._dishService.GetOneAsync(d.DishId);
@@ -66,8 +67,18 @@ public class OrderController : Controller
             foreach (var p in dish.DishesProducts)
             {
                 var product = await this._productService.GetOneAsync(p.ProductId);
-                product.Quantity -= p.ProductsAmount * d.DishesAmount;
-                await this._productService.UpdateAsync(product);
+                var productExspence = p.ProductsAmount * d.DishesAmount;
+                if (product.Quantity < productExspence)
+                {
+                    var str = $"There is no required quantity of products to make {d.Dish.Name}\n";
+                    orderViewModel.DishException += str;
+                    return RedirectToAction("Create", orderViewModel);
+                }
+                else
+                {
+                    product.Quantity -= productExspence;
+                    await this._productService.UpdateAsync(product);
+                }
             }
             d.DishName = d.Dish.Name;
             d.DishesTotal = d.Dish.Price * d.DishesAmount;
