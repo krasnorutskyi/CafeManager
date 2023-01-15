@@ -15,6 +15,8 @@ public interface IOrderService
     Task<Order> GetOneAsync(int id);
 
     Task<byte[]> GenerateInvoice(int id);
+    
+    Task<byte[]> GenerateSalesReport(DateTime date);
 
     Task<Order> GetOneAsync(int id, params Expression<Func<Order, object>>[] includeProperties);
     

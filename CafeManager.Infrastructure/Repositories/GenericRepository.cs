@@ -75,6 +75,17 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
 
         return await query.ToListAsync<TEntity>();
     }
+    
+    public async Task<IEnumerable<TEntity>> GetAllAsync(params Expression<Func<TEntity, object>>[] includeProperties)
+    {
+        var query = this._table.AsNoTracking();
+        foreach (var property in includeProperties)
+        {
+            query = query.Include(property);
+        }
+
+        return await query.ToListAsync<TEntity>();
+    }
 
     public async Task<PagedList<TEntity>> GetPageAsync(PageParameters pageParameters)
     {

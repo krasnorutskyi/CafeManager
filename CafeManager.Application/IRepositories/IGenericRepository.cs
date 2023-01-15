@@ -20,6 +20,8 @@ public interface IGenericRepository<TEntity> where TEntity : EntityBase
     
     Task<IEnumerable<TEntity>> GetAllAsync();
 
+    Task<IEnumerable<TEntity>> GetAllAsync(params Expression<Func<TEntity, object>>[] includeProperties);
+
     Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate,
         params Expression<Func<TEntity, object>>[] includeProperties);
 
