@@ -29,9 +29,15 @@ public class OrderController : Controller
         var orders = await this._orderService.GetPageAsync(pageParameters);
         return View(orders);
     }
-    
-    
-    
+
+    public async Task<IActionResult> GenerateInvoice(int id)
+    {
+        var pdf = await this._orderService.GenerateInvoice(id);
+        var file = new FileContentResult(pdf, "application/pdf");
+        return file;
+    }
+
+
     // GET
     public async Task<IActionResult> Create()
     {

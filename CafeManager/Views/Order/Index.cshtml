@@ -19,7 +19,10 @@
         @foreach (var d in Model)
         {
             <tr>
-                <td>@d.Id <a href="/Order/Details/@d.Id.ToString()" style="width: 100px" class="btn btn-secondary float-end">Details</a> </td>
+                <td>@d.Id 
+                    <a href="/Order/Details/@d.Id.ToString()" style="width: 100px" class="btn btn-secondary float-end">Details</a>
+                    <a href="/Order/GenerateInvoice/@d.Id.ToString()" style="width: 150px" class="btn btn-secondary float-end">Get Invoice</a>
+                </td>
                 
             </tr>
         }

@@ -13,7 +13,9 @@ public interface IOrderService
     Task DeleteAsync(Order order);
     
     Task<Order> GetOneAsync(int id);
-    
+
+    Task<byte[]> GenerateInvoice(int id);
+
     Task<Order> GetOneAsync(int id, params Expression<Func<Order, object>>[] includeProperties);
     
     Task<PagedList<Order>> GetPageAsync(PageParameters pageParameters);
