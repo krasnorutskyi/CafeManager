@@ -33,6 +33,7 @@ public class HomeController : Controller
     public IActionResult GetSales()
     {
         var date = new DateTime();
+        date = DateTime.Today;
         return View(date);
     }
     

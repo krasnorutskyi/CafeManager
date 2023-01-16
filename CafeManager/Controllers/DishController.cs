@@ -4,6 +4,7 @@ using CafeManager.Core.Entities;
 using CafeManager.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CafeManager.Controllers;
 
@@ -25,11 +26,25 @@ public class DishController : Controller
     }
 
     // GET
-    public async Task<IActionResult> Index(PageParameters pageParameters)
+    public async Task<IActionResult> Index(PageParameters pageParameters, string searchString, int category)
     {
-        var dishes = await this._dishService.GetPageAsync(pageParameters);
+        var dishes = await this._dishService.GetAllAsync();
+
+        if (!searchString.IsNullOrEmpty())
+        {
+            dishes = dishes.Where(d => d.Name.Contains(searchString));
+        }
+
+        if (category != 0)
+        {
+            dishes = dishes.Where(d => d.CategoryId == category);
+        }
+
+        var dishesPaged = new PagedList<Dish>(dishes, pageParameters, dishes.Count());
+        var dishesViewModel = new DishesViewModel()
+            {Dishes = dishesPaged, CategoryList = await this.PopulateCategoriesDropDownList()};
         
-        return View(dishes);
+        return View(dishesViewModel);
     }
     
     public async Task<IActionResult> DeleteDish(int id)

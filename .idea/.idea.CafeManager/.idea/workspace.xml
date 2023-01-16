@@ -5,13 +5,13 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="Implementer generation of sales report for the definite date">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IRepositories/IDishRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/DishRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Home/GetDish.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Home/GetDish.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Home/GetSales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Home/GetSales.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +39,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager.Infrastructure/Repositories/GenericRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Controllers/DishController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Controllers/DishController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Views/Order/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/14c2fb8fbba04f6e98cdc5e22e1dc9b9d57d7b9dde93cf2298dd17c9ba902/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -144,7 +140,8 @@
       <workItem from="1672088914170" duration="12358000" />
       <workItem from="1672177639817" duration="47403000" />
       <workItem from="1672842214426" duration="40921000" />
-      <workItem from="1673282882543" duration="48034000" />
+      <workItem from="1673282882543" duration="48862000" />
+      <workItem from="1673890203517" duration="5357000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -370,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673820720325</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fixed issues with automatisation problem">
+      <created>1673821955648</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1673821955648</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +408,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Configured Entities for joining tables with FluentAPI" />
     <MESSAGE value="Initialized database, filled it with data, fixed entities" />
     <MESSAGE value="created interfaces for entities' services" />
     <MESSAGE value="Implemented services for entities" />
@@ -429,7 +432,8 @@
     <MESSAGE value="implemented solution for task of automatisation(chosing dish of the day)" />
     <MESSAGE value="implemented generation of invoice in pdf" />
     <MESSAGE value="Implementer generation of sales report for the definite date" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementer generation of sales report for the definite date" />
+    <MESSAGE value="Fixed issues with automatisation problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with automatisation problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

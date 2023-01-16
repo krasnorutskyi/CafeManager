@@ -1,20 +1,38 @@
-@model CafeManager.Application.Paging.PagedList<CafeManager.Core.Entities.Dish>
+@model CafeManager.ViewModels.DishesViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center mb-4">
     <h1> Dishes </h1>
+    <div class="p-3 mb-1">
+        <form asp-controller="Dish" asp-action="Index">
+        
+                <div class="d-flex justify-content-between bg-light">
+                    <div >
+                        @Html.DropDownList("Category", Model.CategoryList, "Select Category", new {@class = "mb-1 form-control"})
+                    </div>
+                    
+                    <div>
+                        <input type="text" placeholder="Name" style="width: 150px" class="m-1" name="SearchString"/>
+                        <input type="submit" class="btn btn-secondary" value="Search"/>
+                    </div>
+                </div>
+        </form>
+        
+    </div>
     <div class="p-3 d-flex justify-content-end">
         <a href="/Dish/Create" class="btn rounded-circle btn-secondary">+</a>
     </div>
     
     <div><h1></h1></div>
 </div>
+
+
 <div class="container">
     <div class="row">
         
-        @foreach (var d in Model)
+        @foreach (var d in Model.Dishes)
         {
             <div class="col-4 align-content-center">
                 <img src="@d.Image" style="object-fit: cover" class="w-100 h-75"/>
@@ -32,24 +50,24 @@
 </div>
 
 @{
-    var previousPage = (Model.HasPreviousPage) ? "" : "disabled";
-    var nextPage = (Model.HasNextPage) ? "" : "disabled";
+    var previousPage = (Model.Dishes.HasPreviousPage) ? "" : "disabled";
+    var nextPage = (Model.Dishes.HasNextPage) ? "" : "disabled";
 }
 
 <nav class=mt-4>
     <ul class="pagination justify-content-center">
         <li class="page-item @previousPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber - 1)" class="page-link">Previous</a>
+            <a asp-action="Index" asp-route-PageNumber="@(Model.Dishes.PageNumber - 1)" class="page-link">Previous</a>
         </li>
-        @for (var i = 1; i <= Model.TotalPages; i++)
+        @for (var i = 1; i <= Model.Dishes.TotalPages; i++)
         {
-            string linkStatus = (i == Model.PageNumber) ? "active" : "";
+            string linkStatus = (i == Model.Dishes.PageNumber) ? "active" : "";
             <li class="page-item @linkStatus">
                 <a asp-action="Index" asp-route-PageNumber="@i" class="page-link">@i</a>
             </li>
         }
         <li class="page-item @nextPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber + 1)" class="page-link">Next</a>
+            <a asp-action="Index" asp-route-PageNumber="@(Model.Dishes.PageNumber + 1)" class="page-link">Next</a>
         </li>
     </ul>
 </nav>
