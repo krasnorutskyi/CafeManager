@@ -1,7 +1,9 @@
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
+using CafeManager.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CafeManager.Controllers;
 
@@ -15,9 +17,10 @@ public class ProductController : Controller
     }
     
     // GET
-    public async Task<IActionResult> Index(PageParameters pageParameters)
+    public async Task<IActionResult> Index(PageParameters pageParameters, PagedList<Product> products)
     {
-        var products = await this._productService.GetPageAsync(pageParameters);
+        products = await this._productService.GetPageAsync(pageParameters);
+
         return View(products);
     }
     

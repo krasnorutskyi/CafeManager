@@ -24,6 +24,7 @@ public interface IDishService
     Task<Dish> GetOneAsync(int id, params Expression<Func<Dish, object>>[] includeProperties);
     
     Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters);
+    Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters, string searchString, int categoryId);
     
     Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters,
         params Expression<Func<Dish, object>>[] includeProperties);

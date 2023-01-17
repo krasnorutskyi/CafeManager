@@ -6,7 +6,7 @@
 <div class="align-content-center">
     <h1>Create Order</h1>
 </div>
-<form id="form" asp-controller="Order" asp-action="Create" method="post">
+<form id="form" asp-controller="Order" asp-action="CreateOrder" method="post">
     <div class="mb-3">
         <label class="form-label">Waiter's Tipp</label>
         <input asp-for="Tipp" type="number" value="0" class="form-control"/>
@@ -57,7 +57,12 @@
 
 </form>
 
-<h4>@Model.DishException</h4>
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <script type="text/javascript">
+        alert('@ViewBag.Message');
+    </script>
+}
 
 <script>
 var dishesCount = 0;

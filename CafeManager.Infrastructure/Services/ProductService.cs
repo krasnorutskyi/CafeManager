@@ -3,16 +3,19 @@ using CafeManager.Application.IRepositories;
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CafeManager.Infrastructure.Services;
 
 public class ProductService : IProductService
 {
     private readonly IGenericRepository<Product> _productRepository;
+    private readonly IProductRepository _repository;
 
-    public ProductService(IGenericRepository<Product> productRepository)
+    public ProductService(IGenericRepository<Product> productRepository, IProductRepository repository)
     {
         this._productRepository = productRepository;
+        this._repository = repository;
     }
 
     public async Task AddAsync(Product product)
@@ -46,9 +49,14 @@ public class ProductService : IProductService
     {
         return await this._productRepository.GetAllAsync();
     }
-
+    
     public async Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters)
     {
+        if (!pageParameters.Sort.IsNullOrEmpty())
+        {
+            return await this._repository.GetSortedPageAsync(pageParameters);
+        }
+
         return await this._productRepository.GetPageAsync(pageParameters);
     }
 

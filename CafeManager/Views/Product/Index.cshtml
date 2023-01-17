@@ -3,11 +3,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center mb-4">
+<div class="text-center mb-4" xmlns="http://www.w3.org/1999/html">
     <h1> Product </h1>
 </div>
 <div>
-    <div class="p-3 d-flex justify-content-end">
+    <div class="p-3 d-flex justify-content-between">
+        <div>
+            <a class="btn btn-secondary" asp-action="Index" asp-route-Sort="Newest">Newest</a>
+            <a class="btn btn-secondary" asp-action="Index" asp-route-Sort="Oldest">Oldest</a>
+        </div>
         <a href="/Product/Create" class="btn rounded-circle btn-secondary">+</a>
     </div>
     <div><h1></h1></div>
@@ -46,17 +50,17 @@
 <nav class=mt-4>
     <ul class="pagination justify-content-center">
         <li class="page-item @previousPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber - 1)" class="page-link">Previous</a>
+            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber - 1)" asp-route-Sort="@Model.Sort"  class="page-link">Previous</a>
         </li>
         @for (var i = 1; i <= Model.TotalPages; i++)
         {
             string linkStatus = (i == Model.PageNumber) ? "active" : "";
             <li class="page-item @linkStatus">
-                <a asp-action="Index" asp-route-PageNumber="@i" class="page-link">@i</a>
+                <a asp-action="Index" asp-route-PageNumber="@i" asp-route-Sort="@Model.Sort" class="page-link">@i</a>
             </li>
         }
         <li class="page-item @nextPage">
-            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber + 1)" class="page-link">Next</a>
+            <a asp-action="Index" asp-route-PageNumber="@(Model.PageNumber + 1)" asp-route-Sort="@Model.Sort" class="page-link">Next</a>
         </li>
     </ul>
 </nav>

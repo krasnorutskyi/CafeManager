@@ -5,13 +5,24 @@
     <projectFile profileName="IIS Express">CafeManager/CafeManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="">
+    <list default="true" id="ce1ee721-68ad-450a-9ef9-d261779d008b" name="Changes" comment="implemented filtration and search by name for dishes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CafeManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IDishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/IServices/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/IServices/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PageParameters.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Application/Paging/PagedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Repositories/StatisticsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/DishService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager.Infrastructure/Services/ProductService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/DishController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/ViewModels/DishesViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/ViewModels/DishesViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Dish/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Home/GetSales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Home/GetSales.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Order/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CafeManager/Views/Product/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/CafeManager/Views/Product/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +50,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/vitaliy/Desktop/CafeManager/CafeManager/CafeManager/Controllers/DishController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/14c2fb8fbba04f6e98cdc5e22e1dc9b9d57d7b9dde93cf2298dd17c9ba902/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/19ba5a289f2afd3f4d5e862cb3f3efee6181683a31ee31b86c2298b1f51114b/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -141,7 +153,7 @@
       <workItem from="1672177639817" duration="47403000" />
       <workItem from="1672842214426" duration="40921000" />
       <workItem from="1673282882543" duration="48862000" />
-      <workItem from="1673890203517" duration="5357000" />
+      <workItem from="1673890203517" duration="14144000" />
     </task>
     <task id="LOCAL-00001" summary="Created all entities, including joining tables entities">
       <created>1671490017002</created>
@@ -374,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673821955648</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="implemented filtration and search by name for dishes">
+      <created>1673901961939</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1673901961939</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +427,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Initialized database, filled it with data, fixed entities" />
     <MESSAGE value="created interfaces for entities' services" />
     <MESSAGE value="Implemented services for entities" />
     <MESSAGE value="Created repository interface for joining entities" />
@@ -433,37 +451,12 @@
     <MESSAGE value="implemented generation of invoice in pdf" />
     <MESSAGE value="Implementer generation of sales report for the definite date" />
     <MESSAGE value="Fixed issues with automatisation problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with automatisation problem" />
+    <MESSAGE value="implemented filtration and search by name for dishes" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented filtration and search by name for dishes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs</url>
-          <line>105</line>
-          <properties documentPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" initialLine="88" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="4005" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4006" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs</url>
-          <line>79</line>
-          <properties documentPath="$PROJECT_DIR$/CafeManager/Controllers/OrderController.cs" initialLine="73" containingFunctionPresentation="method 'Create'">
-            <startOffsets>
-              <option value="3088" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3124" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/CafeManager.Infrastructure/Services/OrderService.cs</url>
           <line>71</line>

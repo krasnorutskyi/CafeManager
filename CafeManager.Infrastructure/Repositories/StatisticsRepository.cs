@@ -61,7 +61,7 @@ public class StatisticsRepository : IStatisticsRepository
 
             command.CommandText = "SELECT DISTINCT Orders.Date, Count(Orders.Date) FROM Orders "+
                                   "Group by Orders.Date "+
-                                  "ORDER by Count(Orders.Date) DESC "+
+                                  "ORDER by Count(Orders.Date) "+
                                   "OFFSET 0 ROWS "+
                                   "FETCH NEXT 1 ROWS ONLY ";
             

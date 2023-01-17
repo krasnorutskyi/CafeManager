@@ -19,7 +19,7 @@ public interface IProductService
     Task<IEnumerable<Product>> GetAllAsync();
     
     Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters);
-    
+
     Task<PagedList<Product>> GetPageAsync(PageParameters pageParameters,
         params Expression<Func<Product, object>>[] includeProperties);
 

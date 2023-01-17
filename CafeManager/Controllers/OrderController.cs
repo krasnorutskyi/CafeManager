@@ -39,18 +39,19 @@ public class OrderController : Controller
 
 
     // GET
-    public async Task<IActionResult> Create()
+    [HttpGet]
+    public async Task<IActionResult> Create(OrderViewModel orderViewModel)
     {
-        var orderViewModel = new OrderViewModel();
         orderViewModel.WaiterList = await this.PopulateWaitersDropDownList();
         orderViewModel.Dishes = (List<Dish>) await this._dishService.GetAllAsync();
         orderViewModel.TableList = await this.PopulateTablesDropDownList();
+        ViewBag.Message = orderViewModel.DishException;
         return View(orderViewModel);
     }
     
     // POST
     [HttpPost]
-    public async Task<IActionResult> Create(OrderViewModel orderViewModel)
+    public async Task<IActionResult> CreateOrder(OrderViewModel orderViewModel)
     {
         
         var order = new Order
@@ -76,8 +77,8 @@ public class OrderController : Controller
                 var productExspence = p.ProductsAmount * d.DishesAmount;
                 if (product.Quantity < productExspence)
                 {
-                    var str = $"There is no required quantity of products to make {d.Dish.Name}\n";
-                    orderViewModel.DishException += str;
+                    var str = $"There is no required quantity of products to makethis amount of {d.Dish.Name}";
+                    orderViewModel.DishException = str;
                     return RedirectToAction("Create", orderViewModel);
                 }
                 else

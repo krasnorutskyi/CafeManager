@@ -3,6 +3,7 @@ using CafeManager.Application.IRepositories;
 using CafeManager.Application.IServices;
 using CafeManager.Application.Paging;
 using CafeManager.Core.Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CafeManager.Infrastructure.Services;
 
@@ -96,6 +97,27 @@ public class DishService : IDishService
     public async Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters)
     {
         return await this._dishRepository.GetPageAsync(pageParameters);
+    }
+    
+    public async Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters, string searchString, int categoryId)
+    {
+        if (!searchString.IsNullOrEmpty() && categoryId != 0)
+        {
+            return await this._dishRepository.GetPageAsync(pageParameters, d=>d.Name.Contains(searchString) && d.CategoryId == categoryId);
+        }
+        else if (!searchString.IsNullOrEmpty() && categoryId == 0)
+        {
+            return await this._dishRepository.GetPageAsync(pageParameters, d=>d.Name.Contains(searchString));
+        }
+        else if (searchString.IsNullOrEmpty() && categoryId != 0)
+        {
+            return await this._dishRepository.GetPageAsync(pageParameters, d=>d.CategoryId == categoryId);
+        }
+        else
+        {
+            return await this._dishRepository.GetPageAsync(pageParameters);
+        }
+        
     }
 
     public async Task<PagedList<Dish>> GetPageAsync(PageParameters pageParameters, params Expression<Func<Dish, object>>[] includeProperties)
